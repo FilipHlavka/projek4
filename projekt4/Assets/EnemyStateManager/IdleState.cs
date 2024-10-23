@@ -43,7 +43,7 @@ public class IdleState : State
         if (generateCooldown <= 0)
         {
             targetPoint = GenerateRandomPoint();
-            Debug.Log(targetPoint);
+           // Debug.Log(targetPoint);
             agent.SetDestination(targetPoint);
             generateCooldown = 1;
         }

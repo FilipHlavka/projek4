@@ -16,10 +16,10 @@ public class EnemyStateManager : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-       
+        
         ChangeState(new IdleState());
     }
-
+    
     private void ChangeState(State newState)
     {
         currentState = newState;

@@ -45,9 +45,7 @@ public class MovementController : MonoBehaviour
     }
     public void AddToListBox(Movement mv)
     {
-            Debug.Log("rawr~");
-       
-            Debug.Log("OWO what's that");
+           
             Debug.Log("pøidáno");
             selectedUnits.Add(mv);
             mv.isSelected(true);
@@ -61,16 +59,20 @@ public class MovementController : MonoBehaviour
         {
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            LayerMask layerMask = ~LayerMask.GetMask("player");
+           // LayerMask layerMask = ~LayerMask.GetMask("unit");
 
-            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
             {
-
-                foreach (var obj in selectedUnits)
+                if (hit.transform.gameObject.tag != "unit")
                 {
-                    obj.HejbniSe(hit.point);
-                    
+                    Debug.Log(hit.transform.gameObject.tag);
+                    foreach (var obj in selectedUnits)
+                    {
+                        obj.HejbniSe(hit.point);
+
+                    }
                 }
+                
             }
 
 

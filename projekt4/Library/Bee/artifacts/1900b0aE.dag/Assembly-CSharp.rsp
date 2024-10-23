@@ -407,6 +407,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/enemyManager/Enemy.cs"
+"Assets/enemyManager/EnemyPreviewManagement.cs"
 "Assets/EnemyStateManager/AttackState.cs"
 "Assets/EnemyStateManager/CaptureState.cs"
 "Assets/EnemyStateManager/EnemyStateManager.cs"

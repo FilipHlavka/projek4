@@ -388,7 +388,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/scripts
+    - Assets/enemyManager
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -398,15 +398,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 68
   m_LastFolders:
-  - Assets/scripts
+  - Assets/enemyManager
   m_LastFoldersGridSize: 68
   m_LastProjectPath: C:\Users\Acer\Documents\GitHub\projek4\projekt4
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 3.600006}
-    m_SelectedIDs: 08890000
-    m_LastClickedID: 35080
+    m_SelectedIDs: 3e890000
+    m_LastClickedID: 35134
     m_ExpandedIDs: 00000000f687000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -462,8 +462,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3a870000
-    m_LastClickedInstanceID: 34618
+    m_SelectedInstanceIDs: 24870000
+    m_LastClickedInstanceID: 34596
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 64990000de6600005269000000000000
     m_RenameOverlay:
@@ -582,9 +582,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 02fbffff3a870000
+      m_SelectedIDs: 82b0ffff
+      m_LastClickedID: -20350
+      m_ExpandedIDs: 02fbffff50870000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -984,10 +984,10 @@ MonoBehaviour:
       displayed: 1
       id: AINavigationOverlay
       index: 0
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":true,"m_FloatingSnapOffset":{"x":-184.7999267578125,"y":-196.79998779296876},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":true,"m_FloatingSnapOffset":{"x":-239.99993896484376,"y":-194.4010009765625},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 1
       collapsed: 0
-      snapOffset: {x: -184.79993, y: -196.79999}
+      snapOffset: {x: -239.99994, y: -194.401}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       layout: 4
@@ -1230,9 +1230,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 9.444869, y: 15.058267, z: -1.2050014}
+    m_Target: {x: 33.758377, y: 27.506836, z: 7.707243}
     speed: 2
-    m_Value: {x: 9.444869, y: 15.058267, z: -1.2050014}
+    m_Value: {x: 33.758377, y: 27.506836, z: 7.707243}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1278,13 +1278,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.23218872, y: 0.29962656, z: -0.07543325, w: 0.9223698}
+    m_Target: {x: 0.41216642, y: 0.17947169, z: -0.08270289, w: 0.8895582}
     speed: 2
-    m_Value: {x: 0.23217203, y: 0.299605, z: -0.07542782, w: 0.9223035}
+    m_Value: {x: 0.41211602, y: 0.17944974, z: -0.08269278, w: 0.8894494}
   m_Size:
-    m_Target: 1.7128032
+    m_Target: 1.946685
     speed: 2
-    m_Value: 1.7128032
+    m_Value: 1.8628564
   m_Ortho:
     m_Target: 0
     speed: 2
