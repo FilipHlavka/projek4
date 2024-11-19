@@ -4,7 +4,8 @@ using UnityEngine.AI;
 public class EnemyStateManager : MonoBehaviour
 {
     private NavMeshAgent agent;
-   
+    [SerializeField]
+    private Enemy enemy;
 
     private State currentState;
 
@@ -23,7 +24,7 @@ public class EnemyStateManager : MonoBehaviour
     private void ChangeState(State newState)
     {
         currentState = newState;
-        currentState.InitState(agent);
+        currentState.InitState(agent, enemy);
         Debug.Log("Changed State -> " + newState.GetType());
     }
 

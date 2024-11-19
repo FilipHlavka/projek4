@@ -10,12 +10,12 @@ public class projectile : MonoBehaviour
     public Vector3 destination;
     public bool pom = false;
     [SerializeField]
-    int timeToLive;
+    int TTL;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     public void Start()
     {
-        Invoke("DestroyObject",timeToLive);
+        Invoke("DestroyObject",TTL);
     }
     public void DestroyObject()
     {

@@ -1,5 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.AI;
+using System.Collections;
 
 public class IdleState : State
 {
@@ -8,12 +10,15 @@ public class IdleState : State
 
     Vector3 lastPosition;
     Quaternion lastRotation;
-
+    private float scanCooldown = 3f;
+    private float timer = 0;
     float generateCooldown = 0;
+    bool attack = false;
 
-    public override void InitState(NavMeshAgent agent)
+    public override void InitState(NavMeshAgent agent, Enemy enemy)
     {
-        base.InitState(agent);
+        base.InitState(agent,enemy);
+       
         SendEnemyToNextPoint();
     }
 
@@ -26,6 +31,14 @@ public class IdleState : State
 
     public override void DoStep()
     {
+
+        timer += Time.deltaTime;
+        if (timer >= scanCooldown)
+        {
+            timer = 0f;
+            ScanForUnits();
+        }
+
         checkPosition.x = agent.transform.position.x;
         checkPosition.z = agent.transform.position.z;
 
@@ -37,6 +50,22 @@ public class IdleState : State
         lastRotation = agent.transform.rotation;
         lastPosition = agent.transform.position;
     }
+
+    public void ScanForUnits()
+    {
+        // enemak bude utocit na nejblizsi jednotku, pokud na nej budou utocit unity s celkovim poctem zivotu veci nez 1 a pul zivotu enemy, enemy zacne zdrhat
+        foreach(var m in MovementController.instance.units)
+        {
+            if(Vector3.Distance(m.transform.position,enemy.transform.position) < 35)
+            {
+                attack = true;
+                break;
+            }
+        }
+        
+    }
+
+    
 
     private void SendEnemyToNextPoint()
     {
@@ -62,6 +91,11 @@ public class IdleState : State
     public override State TryToChangeState()
     {
        
+        if(attack)
+           return new AttackState();
+
         return null;
     }
+
+   
 }

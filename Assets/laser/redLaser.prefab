@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8688213246985470554}
   - component: {fileID: 4849482892026271751}
   m_Layer: 0
-  m_Name: Laserbeam
+  m_Name: redLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 6269192034228061374}
   - component: {fileID: 679981954463365239}
   - component: {fileID: 8323777519732371447}
-  - component: {fileID: 6024594098958798771}
+  - component: {fileID: 2072408250213591225}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -116,7 +116,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7760b8bd175c469429b9976be0cc0bc7, type: 2}
+  - {fileID: 2100000, guid: a42f8e94d0d474648822814af0da05b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161,7 +161,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6024594098958798771
+--- !u!54 &2072408250213591225
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +169,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5659445160849356504}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     GameObject Pointer;
     public EnemyStateManager stManager;
     public List<Movement> attackingPlayers = new List<Movement>();
+    public List<firePoint> firePoints = new List<firePoint>();
+    public Movement playerToAttack;
+    public bool shouldAttackPlayer = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +28,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
     public void CheckForRemovOfPointer()
@@ -35,4 +38,6 @@ public class Enemy : MonoBehaviour
             ShowPointer(false);
         }
     }
+
+
 }

@@ -84,6 +84,7 @@ MonoBehaviour:
   plAtck: {fileID: 6108828849525609258}
   accuracyOffset: 4
   viewAngle: 45
+  readyForFire: 0
   projectileType: 0
 --- !u!1 &1803255719287653086
 GameObject:
@@ -296,11 +297,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9db4b297e80634da4dfe7ec99c19dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectiles: {fileID: 11400000, guid: b7c804873e406f14a89fb6e23869724d, type: 2}
   shouldFight: 0
   player: {fileID: 0}
   enemy: {fileID: 0}
   playerMV: {fileID: 0}
+  newPositions: []
+  firePoints:
+  - {fileID: 8172386778575944214}
+  - {fileID: 4840840990009884464}
+  - {fileID: 4124973227781212363}
 --- !u!1 &2526108117350358567
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +442,7 @@ MonoBehaviour:
   plAtck: {fileID: 6108828849525609258}
   accuracyOffset: 4
   viewAngle: 45
+  readyForFire: 0
   projectileType: 0
 --- !u!1 &3468089876662305768
 GameObject:
@@ -663,4 +669,5 @@ MonoBehaviour:
   plAtck: {fileID: 6108828849525609258}
   accuracyOffset: 4
   viewAngle: 45
+  readyForFire: 0
   projectileType: 0

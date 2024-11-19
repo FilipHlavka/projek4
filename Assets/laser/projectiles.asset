@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefs:
   - projectile: {fileID: 4849482892026271751, guid: 5c09295bd94477c4e821308edff68642, type: 3}
+  - projectile: {fileID: 4849482892026271751, guid: 274e07b4300d99846a388763d972ffbc, type: 3}
