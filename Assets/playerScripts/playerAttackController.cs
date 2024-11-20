@@ -44,6 +44,7 @@ public class playerAttackController : MonoBehaviour
                         obj.atck.AttackTarget(enemy,obj);
 
                     }
+                    pointController.ptController.MoveUp();
 
                 }
 

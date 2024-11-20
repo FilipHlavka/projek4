@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 1
   plAtck: {fileID: 6108828849525609258}
-  accuracyOffset: 4
+  accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
   projectileType: 0
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 1
   plAtck: {fileID: 6108828849525609258}
-  accuracyOffset: 4
+  accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
   projectileType: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 1
   plAtck: {fileID: 6108828849525609258}
-  accuracyOffset: 4
+  accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
   projectileType: 0

@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6a23e05e4d56648a5fc6f4fd08b256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootCooldown: 1
+  shootCooldown: 0.3
   enemy: {fileID: 8263119856393310535}
-  accuracyOffset: 4
+  accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
   projectileType: 1
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6a23e05e4d56648a5fc6f4fd08b256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootCooldown: 1
+  shootCooldown: 0.3
   enemy: {fileID: 8263119856393310535}
-  accuracyOffset: 4
+  accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
   projectileType: 1
@@ -557,6 +557,7 @@ MonoBehaviour:
   firePoints: []
   playerToAttack: {fileID: 0}
   shouldAttackPlayer: 0
+  range: 35
 --- !u!114 &2295426347698083193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,9 +615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6a23e05e4d56648a5fc6f4fd08b256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootCooldown: 1
+  shootCooldown: 0.3
   enemy: {fileID: 8263119856393310535}
-  accuracyOffset: 4
+  accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
   projectileType: 1

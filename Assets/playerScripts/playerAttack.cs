@@ -41,23 +41,24 @@ public class playerAttack : MonoBehaviour
             if (shouldFight == false)
             {
                 shouldFight = true;
-                
+               
             }
 
         }
         else
         {
             shouldFight = false;
-            if(Vector3.Distance(enemy.transform.position, gameObject.transform.position) >= player.range*2/4)
+            if(Vector3.Distance(enemy.transform.position, gameObject.transform.position) >= player.range* 0.5f)
             Follow();
         }
 
+        CheckForRotation();
     }
     /*private void OnDrawGizmos()
     {
         
     }*/
-    /*public void CheckForFollow() {
+    public void CheckForRotation() {
         bool pom = true;
         foreach (var fPoint in firePoints)
         {
@@ -69,9 +70,19 @@ public class playerAttack : MonoBehaviour
         {
             Debug.Log("no hejbu se");
 
-            Follow();
+           LookAtEnemy();
         }
-    }*/
+    }
+
+    public void LookAtEnemy()
+    {
+        Vector3 direction = enemy.transform.position - transform.position;    
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+
+        
+    }
+   
     public void Follow()
     {
         int i = 0;

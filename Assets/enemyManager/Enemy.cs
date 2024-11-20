@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public List<firePoint> firePoints = new List<firePoint>();
     public Movement playerToAttack;
     public bool shouldAttackPlayer = false;
+    [SerializeField]
+    public int range;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
