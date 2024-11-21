@@ -8,7 +8,7 @@ public class Unit : MonoBehaviour
     [SerializeField]
     public int MaxHP;
 
-    public int Shields;
+    public int SH;
     [SerializeField]
     public int MaxShields;
     [SerializeField]
@@ -20,8 +20,19 @@ public class Unit : MonoBehaviour
     public void Start()
     {
         HP = MaxHP;
-        Shields = MaxShields;
+        SH = MaxShields;
         agent =  gameObject.GetComponent<NavMeshAgent>();
         agent.speed = Speed;
+    }
+    protected void OnDestroy()
+    {
+        Movement mv = gameObject.GetComponent<Movement>();
+        MovementController.instance.units.Remove(mv);
+        if(MovementController.instance.selectedUnits.Contains(mv))
+            MovementController.instance.selectedUnits.Remove(mv);
+
+        if(playerAttackController.instance.selectedUnits.Contains(mv))
+            playerAttackController.instance.selectedUnits.Remove(mv);
+
     }
 }

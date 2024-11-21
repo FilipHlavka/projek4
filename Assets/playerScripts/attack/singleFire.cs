@@ -41,9 +41,9 @@ public class singleFire : firePoint
         projectile pr = Instantiate(universalDataHolder.instance.projectiles.prefs[(int)projectileType].projectile,transform.position, Quaternion.Euler(0,0,0));
         pr.destination = GenerateFireDestination();
         pr.transform.LookAt(pr.destination);
-        pr.transform.rotation = pr.transform.rotation * Quaternion.Euler(0, -90, 0);
+        pr.transform.rotation = pr.transform.rotation * Quaternion.Euler(0, -90, 90);
         pr.direction = (pr.destination - pr.transform.position).normalized;
-
+        
         pr.pom = true;
 
         timer = 0f;

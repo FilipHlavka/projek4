@@ -73,7 +73,15 @@ public class playerAttack : MonoBehaviour
            LookAtEnemy();
         }
     }
+    private void OnDestroy()
+    {
+        if(enemy != null)
+        {
+           
+            enemy.attackingPlayers.Remove(playerMV);
 
+        }
+    }
     public void LookAtEnemy()
     {
         Vector3 direction = enemy.transform.position - transform.position;    
@@ -100,7 +108,7 @@ public class playerAttack : MonoBehaviour
         if (attackMode)
         {
             enemy.attackingPlayers.Remove(playerMV);
-            enemy.CheckForRemovOfPointer();
+           //enemy.CheckForRemovOfPointer();
             enemy = null;
             shouldFight = false;
             attackMode = false;

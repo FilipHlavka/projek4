@@ -29,6 +29,12 @@ public class enemyFirePoint : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if(enemy.playerToAttack != null)
+        Fire();
+    }
+
+    private void Fire()
+    {
         if (enemy.shouldAttackPlayer)
         {
             if (Vector3.Angle(transform.forward, enemy.playerToAttack.transform.position - transform.position) <= viewAngle)
@@ -48,13 +54,13 @@ public class enemyFirePoint : MonoBehaviour
                     else
                     {
                         readyForFire = false;
-                        
+
                     }
                 }
                 else
                 {
                     readyForFire = false;
-                    
+
 
                 }
 

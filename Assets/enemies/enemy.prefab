@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 4502533897012520469}
   - component: {fileID: 8263119856393310535}
   - component: {fileID: 2295426347698083193}
+  - component: {fileID: 595802604379029118}
   m_Layer: 8
   m_Name: enemy
   m_TagString: enemy
@@ -558,6 +559,8 @@ MonoBehaviour:
   playerToAttack: {fileID: 0}
   shouldAttackPlayer: 0
   range: 35
+  HP: 10
+  SH: 10
 --- !u!114 &2295426347698083193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +574,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 8263119856393310535}
+--- !u!54 &595802604379029118
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240599160812416004}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &8067957972228030166
 GameObject:
   m_ObjectHideFlags: 0

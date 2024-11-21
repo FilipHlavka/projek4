@@ -16,6 +16,10 @@ public class Enemy : MonoBehaviour
     public bool shouldAttackPlayer = false;
     [SerializeField]
     public int range;
+    [SerializeField]
+    public int HP;
+    [SerializeField]
+    public int SH;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,18 +28,19 @@ public class Enemy : MonoBehaviour
     }
     public void ShowPointer(bool show)
     {
+        if(Pointer != null)
         Pointer.SetActive(show);
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+        CheckForRemovOfPointer();
     }
 
     public void CheckForRemovOfPointer()
     {
-        if (attackingPlayers.Count == 0)
+        if (attackingPlayers.Count == 0 && Pointer.activeInHierarchy)
         {
             ShowPointer(false);
         }

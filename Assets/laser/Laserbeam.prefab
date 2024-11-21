@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8688213246985470554}
-  - component: {fileID: 4849482892026271751}
   m_Layer: 0
   m_Name: Laserbeam
   m_TagString: Untagged
@@ -33,23 +32,6 @@ Transform:
   - {fileID: 9047193403033143209}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4849482892026271751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5561095786856643632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a6d6c400ff04245b5754f2d878ac70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 50
-  direction: {x: 0, y: 0, z: 0}
-  destination: {x: 0, y: 0, z: 0}
-  pom: 0
-  TTL: 2
 --- !u!1 &5659445160849356504
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,6 +45,7 @@ GameObject:
   - component: {fileID: 679981954463365239}
   - component: {fileID: 8323777519732371447}
   - component: {fileID: 6024594098958798771}
+  - component: {fileID: 1890525586372337704}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -188,3 +171,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1890525586372337704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659445160849356504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a6d6c400ff04245b5754f2d878ac70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  direction: {x: 0, y: 0, z: 0}
+  destination: {x: 0, y: 0, z: 0}
+  pom: 0
+  damage: 1
+  TTL: 2

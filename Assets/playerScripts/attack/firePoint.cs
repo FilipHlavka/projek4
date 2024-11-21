@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class firePoint : MonoBehaviour
 {
@@ -31,6 +32,12 @@ public class firePoint : MonoBehaviour
 
     // Update is called once per frame
     public void Update()
+    {
+        if (plAtck.enemy != null)
+            MakeAttackMove();
+    }
+
+    private void MakeAttackMove()
     {
         if (plAtck.shouldFight)
         {
@@ -68,7 +75,7 @@ public class firePoint : MonoBehaviour
                 }
             }
 
-            
+
 
         }
     }

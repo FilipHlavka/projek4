@@ -51,15 +51,24 @@ public class AttackState : State
 
         }
 
-        if (Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) >= enemy.range/2)
+        if(enemy.playerToAttack != null)
+            MakeAttackMove();
+        
+      
+
+    }
+
+    private void MakeAttackMove()
+    {
+        if (Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) >= enemy.range / 2)
         {
-           // Debug.Log(Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) + "  " + enemy.range / 2);
+            // Debug.Log(Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) + "  " + enemy.range / 2);
             SendEnemyToPlayer();
         }
 
         if (Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) <= enemy.range / 4)
         {
-           
+
             SendEnemyFromPlayer();
         }
 
@@ -74,7 +83,6 @@ public class AttackState : State
             enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, targetRotation, Time.deltaTime * 5f);
 
         }
-        
     }
 
     private bool IsNotMoving()

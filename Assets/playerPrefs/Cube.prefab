@@ -280,9 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  MaxHP: 100
-  Shields: 0
-  MaxShields: 100
+  MaxHP: 5
+  SH: 0
+  MaxShields: 5
   range: 25
   Speed: 7
 --- !u!114 &6108828849525609258
