@@ -40,8 +40,9 @@ public class enemyFirePoint : MonoBehaviour
             if (Vector3.Angle(transform.forward, enemy.playerToAttack.transform.position - transform.position) <= viewAngle)
             {
                 //Debug.Log("zde" + transform.name);
+                LayerMask layerMask = ~LayerMask.GetMask("pointer");
 
-                if (Physics.Raycast(transform.position, enemy.playerToAttack.transform.position - transform.position, out RaycastHit hit))
+                if (Physics.Raycast(transform.position, enemy.playerToAttack.transform.position - transform.position, out RaycastHit hit, 1000, layerMask))
                 {
                     //Debug.Log("zde" + hit.transform.name);
 

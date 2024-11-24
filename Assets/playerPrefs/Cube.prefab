@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootCooldown: 1
-  plAtck: {fileID: 6108828849525609258}
+  plAtck: {fileID: 5617702289938893092}
   accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 2495994434846947937}
   - component: {fileID: 2601728493113668665}
   - component: {fileID: 2932504347167935640}
-  - component: {fileID: 6108828849525609258}
+  - component: {fileID: 5617702289938893092}
   m_Layer: 6
   m_Name: Cube
   m_TagString: unit
@@ -285,7 +285,8 @@ MonoBehaviour:
   MaxShields: 5
   range: 25
   Speed: 7
---- !u!114 &6108828849525609258
+  isStation: 0
+--- !u!114 &5617702289938893092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,15 +298,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9db4b297e80634da4dfe7ec99c19dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldFight: 0
   player: {fileID: 0}
-  enemy: {fileID: 0}
-  playerMV: {fileID: 0}
+  playerMV: {fileID: 2495994434846947937}
   newPositions: []
   firePoints:
   - {fileID: 8172386778575944214}
   - {fileID: 4840840990009884464}
   - {fileID: 4124973227781212363}
+  shouldFight: 0
+  enemy: {fileID: 0}
 --- !u!1 &2526108117350358567
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootCooldown: 1
-  plAtck: {fileID: 6108828849525609258}
+  plAtck: {fileID: 5617702289938893092}
   accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0
@@ -666,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootCooldown: 1
-  plAtck: {fileID: 6108828849525609258}
+  plAtck: {fileID: 5617702289938893092}
   accuracyOffset: 3
   viewAngle: 45
   readyForFire: 0

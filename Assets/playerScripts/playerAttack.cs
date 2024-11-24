@@ -6,23 +6,23 @@ public class playerAttack : MonoBehaviour
 {
    /* [SerializeField]
     public laserScriptable projectiles;*/
-    public bool shouldFight = false;
     public Unit player;
-    public Enemy enemy;
     public Movement playerMV;
     bool attackMode = false;
     public List<Vector3> newPositions = new List<Vector3>();
     public List<firePoint> firePoints = new List<firePoint>();
+    public bool shouldFight = false;
+    public Enemy enemy;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
         player = gameObject.GetComponent<Unit>();   
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         // sledovat a støílet na enemy + šipièka nad enemy, když po nìm støílím
         if(enemy != null)
@@ -31,7 +31,7 @@ public class playerAttack : MonoBehaviour
         }
     }
 
-    public void isInRange()
+    public virtual void isInRange()
     {
         
         if(Vector3.Distance(enemy.transform.position,gameObject.transform.position) <= player.range)
@@ -58,7 +58,7 @@ public class playerAttack : MonoBehaviour
     {
         
     }*/
-    public void CheckForRotation() {
+    public virtual void CheckForRotation() {
         bool pom = true;
         foreach (var fPoint in firePoints)
         {
@@ -73,7 +73,7 @@ public class playerAttack : MonoBehaviour
            LookAtEnemy();
         }
     }
-    private void OnDestroy()
+    public virtual void OnDestroy()
     {
         if(enemy != null)
         {
@@ -82,7 +82,7 @@ public class playerAttack : MonoBehaviour
 
         }
     }
-    public void LookAtEnemy()
+    public virtual void LookAtEnemy()
     {
         Vector3 direction = enemy.transform.position - transform.position;    
         Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -91,7 +91,7 @@ public class playerAttack : MonoBehaviour
         
     }
    
-    public void Follow()
+    public virtual void Follow()
     {
         int i = 0;
         Vector3 difference = (enemy.transform.position - player.transform.position)/2;
