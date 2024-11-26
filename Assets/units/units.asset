@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: units
   m_EditorClassIdentifier: 
   prefs:
-  - unit: {fileID: 0}
-    cenaOtaznik: 0
+  - unit: {fileID: 2932504347167935640, guid: c643319815ae07247ab2eabadf4d03ed, type: 3}
+    Name: Cube
+    Price: 100
+    neededLevel: 0

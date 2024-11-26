@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1628823536311687986}
   - component: {fileID: 5572691513579078694}
   - component: {fileID: 4475958241649655412}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1490674954126501654}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 5118336120944592965}
   - component: {fileID: 4691022432208510351}
   - component: {fileID: 3571033914873039928}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242954217675630925}
   - component: {fileID: 4526595134966053568}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9110205627234266993}
   - component: {fileID: 1821156578177790414}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,11 +363,11 @@ GameObject:
   - component: {fileID: 1872986043485898729}
   - component: {fileID: 7355966702027817295}
   - component: {fileID: 403612219670685433}
-  - component: {fileID: 2477208033931093758}
   - component: {fileID: -542214563949962375}
   - component: {fileID: -6519046092572054720}
   - component: {fileID: 1099204747942437773}
-  m_Layer: 6
+  - component: {fileID: 5414791993115058352}
+  m_Layer: 9
   m_Name: mother cube
   m_TagString: unit
   m_Icon: {fileID: 0}
@@ -465,21 +465,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2477208033931093758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9183639300807157515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccd8a325a6234fc40974deb9b55e8c87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: -542214563949962375}
-  ring: {fileID: 4526595134966053568}
-  atck: {fileID: 0}
 --- !u!195 &-542214563949962375
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -534,9 +519,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: -6519046092572054720}
-  playerMV: {fileID: 2477208033931093758}
+  playerMV: {fileID: 0}
   newPositions: []
   firePoints:
   - {fileID: 1821156578177790414}
   shouldFight: 0
   enemy: {fileID: 0}
+--- !u!114 &5414791993115058352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9183639300807157515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd96c1e578a68f4ea66f067eda42b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  ring: {fileID: 4526595134966053568}
+  atck: {fileID: 0}

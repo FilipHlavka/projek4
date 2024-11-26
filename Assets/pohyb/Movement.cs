@@ -23,7 +23,7 @@ public class Movement: MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
       
     }
-    void Start()
+    public virtual void Start()
     {
         agent.stoppingDistance = 2;
         MovementController.instance.units.Add(this);
@@ -44,7 +44,7 @@ public class Movement: MonoBehaviour
         stuj = !stuj;
         agent.isStopped = false;
     }
-    public void HejbniSe(Vector3 destination)
+    public virtual void HejbniSe(Vector3 destination)
     {
        
          agent.SetDestination(destination);

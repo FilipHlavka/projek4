@@ -8,7 +8,8 @@ public class playerAttackController : MonoBehaviour
     public Camera cam;
     public static playerAttackController instance;
     public List<Movement> selectedUnits = new List<Movement>();
-    
+    public StationMovement station;
+
     private void Awake()
     {
         instance = this;
@@ -17,14 +18,21 @@ public class playerAttackController : MonoBehaviour
     void Start()
     {
         selectedUnits = MovementController.instance.selectedUnits;
-}
+       
+    }
 
     // Update is called once per frame
     void Update()
     {
+        UnitAttack();
+        stationAttack();
+    }
+
+    private void UnitAttack()
+    {
         if (Input.GetKeyDown(KeyCode.Mouse1) && Pauza.pauza.canChange)
         {
-           
+
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             LayerMask layerMask = ~LayerMask.GetMask("pointer");
 
@@ -35,15 +43,54 @@ public class playerAttackController : MonoBehaviour
                     //Debug.Log(hit.transform.gameObject.tag);
                     Enemy enemy = hit.transform.gameObject.GetComponent<Enemy>();
                     enemy.ShowPointer(true);
-                    
-                   // pointController.ptController.Move(hit.point);
+
+                    // pointController.ptController.Move(hit.point);
 
                     foreach (var obj in selectedUnits)
                     {
                         enemy.attackingPlayers.Add(obj);
-                        obj.atck.AttackTarget(enemy,obj);
+                        obj.atck.AttackTarget(enemy, obj);
 
                     }
+                    pointController.ptController.MoveUp();
+
+                }
+
+            }
+
+
+
+        }
+    }
+
+    private void stationAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && Pauza.pauza.canChange)
+        {
+
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            LayerMask layerMask = ~LayerMask.GetMask("pointer");
+
+           
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+            {
+                //Debug.Log(hit.transform.gameObject.tag);
+
+                if (hit.transform.gameObject.tag == "enemy" && station != null)
+                {
+                    Debug.Log(hit.transform.gameObject.tag);
+                    Enemy enemy = hit.transform.gameObject.GetComponent<Enemy>();
+                    enemy.ShowPointer(true);
+
+                    // pointController.ptController.Move(hit.point);
+
+                
+                        enemy.attackingStation = station;
+                        station.atck.AttackTarget(enemy, station);
+                    
+                       
+
+                    
                     pointController.ptController.MoveUp();
 
                 }

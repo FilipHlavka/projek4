@@ -6,6 +6,8 @@ TagManager:
   tags:
   - unit
   - enemy
+  - station
+  - shop
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - unit
   - pointer
   - enemy
-  - 
-  - 
+  - station
+  - shop
   - 
   - 
   - 

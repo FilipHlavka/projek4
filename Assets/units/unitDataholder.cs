@@ -7,5 +7,7 @@ using UnityEngine;
 public class unitDataHolder
 {
     public Unit unit;
-    public int cenaOtaznik;
+    public string Name;
+    public int Price;
+    public int neededLevel;
 }

@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public List<Movement> attackingPlayers = new List<Movement>();
     public List<firePoint> firePoints = new List<firePoint>();
     public Movement playerToAttack;
+    public StationMovement attackingStation;
     public bool shouldAttackPlayer = false;
     [SerializeField]
     public int range;
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour
 
     public void CheckForRemovOfPointer()
     {
-        if (attackingPlayers.Count == 0 && Pointer.activeInHierarchy)
+        if (attackingPlayers.Count == 0 && Pointer.activeInHierarchy && attackingStation == null)
         {
             ShowPointer(false);
         }

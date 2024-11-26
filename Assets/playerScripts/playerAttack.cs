@@ -65,13 +65,15 @@ public class playerAttack : MonoBehaviour
             if(fPoint.readyForFire == true)
                 pom = false;
 
+           
         }
         if (pom)
         {
             Debug.Log("no hejbu se");
 
-           LookAtEnemy();
+            LookAtEnemy();
         }
+
     }
     public virtual void OnDestroy()
     {
@@ -86,7 +88,7 @@ public class playerAttack : MonoBehaviour
     {
         Vector3 direction = enemy.transform.position - transform.position;    
         Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2f);
 
         
     }
@@ -98,6 +100,7 @@ public class playerAttack : MonoBehaviour
         newPositions = PoziceManager.Instance.aktPosition.makeMath(enemy.transform.position - difference, enemy.attackingPlayers);
         foreach(var pl in enemy.attackingPlayers)
         {
+            if(pl != null)
             pl.HejbniSe(newPositions[i]);
             i++;    
         }

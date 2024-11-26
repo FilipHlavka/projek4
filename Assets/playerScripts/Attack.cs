@@ -18,7 +18,7 @@ public class StationAttack : playerAttack
 
     public override void isInRange()
     {
-        Debug.Log(enemy.transform.position + gameObject.transform.position);
+        //Debug.Log(enemy.transform.position + gameObject.transform.position);
         if (Vector3.Distance(enemy.transform.position, gameObject.transform.position) <= player.range)
         {
 

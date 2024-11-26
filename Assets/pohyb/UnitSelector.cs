@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnitSelector : MonoBehaviour
 {
@@ -37,16 +38,45 @@ public class UnitSelector : MonoBehaviour
             }
 
             LayerMask stationMask = LayerMask.GetMask("station");
+            
 
             if (Physics.Raycast(ray, out RaycastHit hit2, Mathf.Infinity, stationMask))
             {
-              
+                Debug.Log("funguj");
+                StationController.instance.AddStation(hit2.transform);
+            }
+            else if(isClickingOnShop())
+            {
+               
+                
             }
             else
             {
-               
+                StationController.instance.RemoveStation();
             }
+
 
         }
     }
+
+    private bool isClickingOnShop()
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+
+        foreach (var result in results)
+        {
+            if (result.gameObject.CompareTag("shop")) 
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
