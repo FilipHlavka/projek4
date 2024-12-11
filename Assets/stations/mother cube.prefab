@@ -503,7 +503,7 @@ MonoBehaviour:
   MaxHP: 50
   SH: 0
   MaxShields: 50
-  range: 30
+  range: 50
   Speed: 0
   isStation: 1
 --- !u!114 &1099204747942437773

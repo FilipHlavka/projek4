@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         stManager = GetComponent<EnemyStateManager>();
         EnemyPreviewManagement.Instance.AddEnemy(this);
+        InvokeRepeating("ClearLis",3,3);
     }
     public void ShowPointer(bool show)
     {
@@ -41,11 +43,24 @@ public class Enemy : MonoBehaviour
 
     public void CheckForRemovOfPointer()
     {
+
         if (attackingPlayers.Count == 0 && Pointer.activeInHierarchy && attackingStation == null)
         {
             ShowPointer(false);
         }
     }
 
+    private void ClearList()
+    {
+        int j = 0;
+        for (int i = 0; i < attackingPlayers.Count -j; i++)
+        {
+            if (attackingPlayers[i] == null)
+            {
+                attackingPlayers.RemoveAt(i);
+                j++;
+            }
+        }
+    }
 
 }

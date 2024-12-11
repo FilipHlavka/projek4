@@ -86,6 +86,51 @@ public class enemyFirePoint : MonoBehaviour
         return destination;
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        if (viewAngle > 0)
+        {
+            Gizmos.color = Color.yellow;
+            Vector3 forward = transform.forward;
+
+            // Draw the cone for the view angle
+            Quaternion leftRayRotation = Quaternion.Euler(0, -viewAngle, 0);
+            Quaternion rightRayRotation = Quaternion.Euler(0, viewAngle, 0);
+
+            Vector3 leftRayDirection = leftRayRotation * forward;
+            Vector3 rightRayDirection = rightRayRotation * forward;
+
+            // Draw the base direction
+            Gizmos.DrawRay(transform.position, forward * 5);
+
+            // Draw the left and right bounds of the angle
+            Gizmos.DrawRay(transform.position, leftRayDirection * 5);
+            Gizmos.DrawRay(transform.position, rightRayDirection * 5);
+
+            // Optionally, draw an arc
+            DrawArc(forward, viewAngle, 5, 20);
+        }
+    }
+
+    private void DrawArc(Vector3 forward, float angle, float radius, int segments)
+    {
+        Vector3 startPoint = Quaternion.Euler(0, -angle, 0) * forward * radius + transform.position;
+        Vector3 previousPoint = startPoint;
+
+        for (int i = 1; i <= segments; i++)
+        {
+            float currentAngle = -angle + (i * (angle * 2 / segments));
+            Vector3 nextPoint = Quaternion.Euler(0, currentAngle, 0) * forward * radius + transform.position;
+
+            Gizmos.DrawLine(previousPoint, nextPoint);
+            previousPoint = nextPoint;
+        }
+
+        // Close the arc back to the center
+        Gizmos.DrawLine(previousPoint, startPoint);
+    }
+
+
     public virtual void inicializeFire() { }
 }
 

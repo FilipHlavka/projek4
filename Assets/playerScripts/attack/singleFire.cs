@@ -43,7 +43,7 @@ public class singleFire : firePoint
         pr.transform.LookAt(pr.destination);
         pr.transform.rotation = pr.transform.rotation * Quaternion.Euler(0, -90, 90);
         pr.direction = (pr.destination - pr.transform.position).normalized;
-        
+        pr.spawnedByPlayer = true;
         pr.pom = true;
 
         timer = 0f;

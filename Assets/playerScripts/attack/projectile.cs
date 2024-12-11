@@ -13,6 +13,7 @@ public class projectile : MonoBehaviour
     int damage;
     [SerializeField]
     int TTL;
+    public bool spawnedByPlayer = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
@@ -36,7 +37,7 @@ public class projectile : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.TryGetComponent<Enemy>(out Enemy en))
+        if(collision.transform.TryGetComponent<Enemy>(out Enemy en) && spawnedByPlayer)
         {
           
            if(en.SH - damage <= 0)
@@ -56,7 +57,7 @@ public class projectile : MonoBehaviour
            Destroy(gameObject);
         }
        
-        if (collision.transform.TryGetComponent<Unit>(out Unit unit))
+        if (collision.transform.TryGetComponent<Unit>(out Unit unit) && !spawnedByPlayer)
         {
             if (unit.SH - damage <= 0)
             {

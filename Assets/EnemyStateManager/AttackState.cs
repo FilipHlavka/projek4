@@ -65,10 +65,11 @@ public class AttackState : State
             // Debug.Log(Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) + "  " + enemy.range / 2);
             SendEnemyToPlayer();
         }
+        // Debug.Log(Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) + "  " + enemy.range / 3);
 
         if (Vector3.Distance(enemy.transform.position, enemy.playerToAttack.transform.position) <= enemy.range / 4)
         {
-
+            //Debug.Log("volam se");
             SendEnemyFromPlayer();
         }
 
@@ -103,15 +104,15 @@ public class AttackState : State
         
         float retreatDistance = enemy.range / 2f; 
         Vector3 retreatPosition = enemy.transform.position + retreatDirection * retreatDistance;
-
+        //Debug.Log($"enemy position {enemy.transform.position}, retreat position {retreatPosition}");
         
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(retreatPosition, out hit, 1.0f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(retreatPosition, out NavMeshHit hit, 100, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
             targetPoint = agent.destination;
+            
         }
-      
+
 
         targetPoint = agent.destination;
         lastRotation = agent.transform.rotation;

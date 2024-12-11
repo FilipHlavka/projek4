@@ -557,6 +557,7 @@ MonoBehaviour:
   attackingPlayers: []
   firePoints: []
   playerToAttack: {fileID: 0}
+  attackingStation: {fileID: 0}
   shouldAttackPlayer: 0
   range: 35
   HP: 10

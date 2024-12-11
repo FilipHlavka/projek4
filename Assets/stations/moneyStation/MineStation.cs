@@ -45,29 +45,46 @@ public class MineStation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.TryGetComponent<Unit>(out Unit unit))
+        if (other.transform.TryGetComponent<Unit>(out Unit unit) ||
+       (unit = other.transform.GetComponentInParent<Unit>()) != null)
         {
+
+            if (!units.Contains(unit))
             units.Add(unit);
             CheckForCapture();
         }
-        if (other.transform.TryGetComponent<Enemy>(out Enemy en))
+
+       
+        if (other.transform.TryGetComponent<Enemy>(out Enemy enemy) ||
+            (enemy = other.transform.GetComponentInParent<Enemy>()) != null)
         {
-            Enemies.Add(en);
+            
+            if (!Enemies.Contains(enemy))
+            Enemies.Add(enemy);
             CheckForCapture();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.TryGetComponent<Unit>(out Unit unit))
+        if (other.transform.TryGetComponent<Unit>(out Unit unit) ||
+         (unit = other.transform.GetComponentInParent<Unit>()) != null)
         {
-            units.Remove(unit);
-            CheckForCapture();
+            if (units.Contains(unit))
+            {
+                units.Remove(unit);
+                CheckForCapture();
+            }
         }
-        if (other.transform.TryGetComponent<Enemy>(out Enemy en))
+
+        if (other.transform.TryGetComponent<Enemy>(out Enemy enemy) ||
+            (enemy = other.transform.GetComponentInParent<Enemy>()) != null)
         {
-            Enemies.Remove(en);
-            CheckForCapture();
+            if (Enemies.Contains(enemy))
+            {
+                Enemies.Remove(enemy);
+                CheckForCapture();
+            }
         }
     }
 
