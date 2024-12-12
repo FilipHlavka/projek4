@@ -41,13 +41,17 @@ public class firePoint : MonoBehaviour
     {
         if (plAtck.shouldFight)
         {
+            Debug.Log("ano");
             if (Vector3.Angle(transform.forward, plAtck.enemy.transform.position - transform.position) <= viewAngle)
             {
                 Debug.Log("zde" + transform.name);
                 LayerMask layerMask = ~LayerMask.GetMask("pointer");
+                
+                Debug.DrawRay(transform.position, plAtck.enemy.transform.position - transform.position, Color.red);
+
                 if (Physics.Raycast(transform.position, plAtck.enemy.transform.position - transform.position, out RaycastHit hit,1000,layerMask))
                 {
-                    //Debug.Log("zde" + hit.transform.name);
+                    Debug.Log("zde" + hit.transform.name);
 
                     if (hit.transform == plAtck.enemy.transform)
                     {

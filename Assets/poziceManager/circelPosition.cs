@@ -16,7 +16,7 @@ public class circlePosition : Pozice
             float x = Mathf.Cos(angle) * radius;
             float z = Mathf.Sin(angle) * radius;
 
-            newPositions.Add(new Vector3(startPosition.x + x, 0, startPosition.z + z));
+            newPositions.Add(new Vector3(startPosition.x + x * 1.3f, 0, startPosition.z + z * 1.3f));
             i++;
 
         }

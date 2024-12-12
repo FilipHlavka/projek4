@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3311713871561988273}
   - component: {fileID: 954318700072278923}
   - component: {fileID: 3582380319555307388}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GreenLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,3 +157,4 @@ MonoBehaviour:
   pom: 0
   damage: 1
   TTL: 2
+  spawnedByPlayer: 0

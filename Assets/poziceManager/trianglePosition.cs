@@ -15,7 +15,7 @@ public class trianglePosition : Pozice
         {
             for (int d = 0; d < i && k < unitsList.Count; d++)
             {
-                newPositions.Add(new Vector3(startPosition.x + i * 5, 0, startPosition.z  + d * 5));
+                newPositions.Add(new Vector3(startPosition.x + i * 8, 0, startPosition.z  + d * 8));
                 k++;
 
             }

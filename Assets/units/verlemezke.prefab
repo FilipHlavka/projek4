@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8543423770806434796}
   - component: {fileID: 891745913180727211}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4962434107859552968}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 8763513693694306323}
   - component: {fileID: 3014197745274339707}
   - component: {fileID: 3081509344312636951}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6165664843745881622}
   - component: {fileID: 1400090944569977934}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: firePoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ Transform:
   m_GameObject: {fileID: 2487621047668292925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.49, y: 0, z: 4.409}
+  m_LocalPosition: {x: 4.49, y: 0, z: 4.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -882,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9216933849797579292}
   - component: {fileID: 4744311358308209840}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: firePoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ Transform:
   m_GameObject: {fileID: 3153976308321627269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.57, y: -0.452, z: 4.409}
+  m_LocalPosition: {x: -2.57, y: -0.452, z: 4.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -932,7 +932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5261852748462254671}
   - component: {fileID: 2628328892817570948}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ Transform:
   m_GameObject: {fileID: 3285005195624117822}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.512, y: -0.477, z: 4.29}
+  m_LocalPosition: {x: 2.512, y: -0.477, z: 4.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -989,7 +989,7 @@ GameObject:
   - component: {fileID: -2321175181845224783}
   - component: {fileID: -4354137484480371264}
   m_Layer: 6
-  m_Name: StarSparrow5
+  m_Name: verlemezke
   m_TagString: unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 6418323227410063640}
   - component: {fileID: 8814176903455721753}
   - component: {fileID: 9187709283180445859}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,7 +1852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7610012153959834832}
   - component: {fileID: 5816435418264235071}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: firePoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1868,7 +1868,7 @@ Transform:
   m_GameObject: {fileID: 6715164192011106354}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.458, y: 0, z: 4.409}
+  m_LocalPosition: {x: -4.458, y: 0, z: 4.979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

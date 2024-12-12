@@ -17,7 +17,7 @@ public class boxPosition : Pozice
             for (int j = 0; j < x && k < unitsList.Count; j++)
             {
                
-                newPositions.Add(new Vector3(startPosition.x + i * 5, 0, startPosition.z + j * 5));
+                newPositions.Add(new Vector3(startPosition.x + i * 8, 0, startPosition.z + j * 8));
                 k++;
                 //Debug.Log($"{unitsList[j].name} {newPositions[j]} ");
 
