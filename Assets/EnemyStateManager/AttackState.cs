@@ -38,6 +38,21 @@ public class AttackState : State
 
             }
         }
+
+        foreach (var m in StationController.instance.stations)
+        {
+            if (Vector3.Distance(m.transform.position, enemy.transform.position) < 35)
+            {
+                if (Vector3.Distance(m.transform.position, enemy.transform.position) < smallestDistance)
+                {
+                    smallestDistance = Vector3.Distance(m.transform.position, enemy.transform.position);
+                    closestUnit = m;
+                }
+
+            }
+        }
+
+
         enemy.playerToAttack = closestUnit;
         enemy.shouldAttackPlayer = true;
     }

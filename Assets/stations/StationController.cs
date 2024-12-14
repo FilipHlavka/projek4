@@ -13,6 +13,7 @@ public class StationController : MonoBehaviour
     public List<StationMovement> stations = new List<StationMovement>();
     public GameObject panel;
     public int stationLevel = 0;
+    public int maxLevel = 3;
 
     private void Awake()
     {
@@ -42,6 +43,14 @@ public class StationController : MonoBehaviour
         }
         
 
+    }
+
+    public void levelUp()
+    {
+        stationLevel++;
+        Shop.instance.updateButtons();
+        if (stationLevel == maxLevel)
+            Shop.instance.removeUpgradeButton();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

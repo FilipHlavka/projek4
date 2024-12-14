@@ -8,6 +8,7 @@ public class pointController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public static pointController ptController;
     Vector3 zaklPosition = new Vector3(0, 800, 0);
+    bool ShouldDisappear = true;
 
     private void Awake()
     {
@@ -21,9 +22,10 @@ public class pointController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "unit")
         {
+            ShouldDisappear = true;
             StartCoroutine(Delay());
         }
     }
@@ -31,6 +33,7 @@ public class pointController : MonoBehaviour
     public void Move(Vector3 position)
     {
         point.transform.position = position;
+        ShouldDisappear = false;
     }
     public void MoveUp()
     {
@@ -40,7 +43,11 @@ public class pointController : MonoBehaviour
     {
         
         yield return new WaitForSeconds(1f);
-        MoveUp();
+        if (ShouldDisappear )
+        {
+            MoveUp();
+
+        }
     }
 }
 

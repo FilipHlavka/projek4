@@ -17,6 +17,8 @@ public class Unit : MonoBehaviour
     public float Speed;
     NavMeshAgent agent;
     public bool isStation = false;
+    [SerializeField]
+    public string Name;
 
     public void Start()
     {

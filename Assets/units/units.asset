@@ -17,3 +17,14 @@ MonoBehaviour:
     Name: Cube
     Price: 100
     neededLevel: 0
+    image: {fileID: 21300000, guid: 783299b7e5164be47864d645729011fe, type: 3}
+  - unit: {fileID: 3618679333768323106, guid: 2279e3840f89086489658fdab2a4bb4f, type: 3}
+    Name: "V\xE9rlemezke"
+    Price: 250
+    neededLevel: 0
+    image: {fileID: 21300000, guid: 22aa87368a6e48f4ca422daf28964758, type: 3}
+  - unit: {fileID: 121548912634121010, guid: 971f517510b784d4e956088c250a200f, type: 3}
+    Name: "Ny\xEDl"
+    Price: 500
+    neededLevel: 1
+    image: {fileID: 21300000, guid: 8d2db5a3e9fb37e4b8b465f3ef3a382e, type: 3}

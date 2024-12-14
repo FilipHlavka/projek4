@@ -28,8 +28,14 @@ public class UnitSelector : MonoBehaviour
            
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, unitMask ) && !MovementController.instance.unselect)
             {
+                if(!isClickingOnShop())
                 MovementController.instance.AddToList(hit.transform);
                 
+            }
+            else if (isClickingOnShop())
+            {
+
+
             }
             else
             {

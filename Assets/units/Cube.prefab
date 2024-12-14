@@ -286,6 +286,7 @@ MonoBehaviour:
   range: 25
   Speed: 7
   isStation: 0
+  Name: cu
 --- !u!114 &5617702289938893092
 MonoBehaviour:
   m_ObjectHideFlags: 0
