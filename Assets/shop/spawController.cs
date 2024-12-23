@@ -5,6 +5,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.AI;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+using System.Drawing;
+using System.Collections;
 
 public class spawController : MonoBehaviour
 {
@@ -35,8 +39,11 @@ public class spawController : MonoBehaviour
     Unit unitToSpawn;
     [SerializeField]
     GameObject SpawnGameObject;
-
-
+    [SerializeField]
+    float jumpDuration;
+    [SerializeField]
+    GameObject Cross;
+    float timer;
     private void Awake()
     {
         instance = this;
@@ -119,7 +126,7 @@ public class spawController : MonoBehaviour
 
     public void Expand()
     {
-        Debug.Log(panelTF.anchoredPosition.x);
+       // Debug.Log(panelTF.anchoredPosition.x);
 
         if (panelTF.anchoredPosition.x > 0)
         {
@@ -148,8 +155,12 @@ public class spawController : MonoBehaviour
                     if (hit.transform.gameObject.tag != "unit" && hit.transform.gameObject.tag != "enemy")
                     {
                         //Debug.Log(hit.transform.gameObject.tag);
-
-                        Instantiate(unitToSpawn,hit.point, Quaternion.Euler(new Vector3(0,Random.Range(0,360),0)) ,SpawnGameObject.transform);
+                        if (!CanBeSpawned(hit.point))
+                        {
+                            Instantiate(Cross, hit.point, Quaternion.Euler(0,0,0));
+                            return;
+                        }
+                        Spawn(hit.point);
                         waitingToSpawn = false;
                         DeleteFromList(unitToSpawn);
 
@@ -161,5 +172,78 @@ public class spawController : MonoBehaviour
 
             }
         }
+    }
+
+
+    public void Spawn(Vector3 spawnPosition)
+    {
+
+       
+        //spawnPosition = new Vector3(spawnPosition.x,29,spawnPosition.z);
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
+
+        Vector3 axis = rotation * Vector3.back;
+
+       
+        Vector3 toSpawnPosition = spawnPosition + axis * 20;
+
+        Debug.Log(toSpawnPosition);
+        Debug.Log(spawnPosition);
+    
+        if (NavMesh.SamplePosition(toSpawnPosition, out NavMeshHit hit, 100, NavMesh.AllAreas))
+        {
+            Unit un = Instantiate(unitToSpawn, toSpawnPosition, rotation, SpawnGameObject.transform);
+            soundManager.instance.PlayClip(un.spawn);
+            //Debug.Log(new Vector3(toSpawnPosition.x, 29, toSpawnPosition.z) + "    " + new Vector3(spawnPosition.x, 29, spawnPosition.z));
+            StartCoroutine(goTo(toSpawnPosition, spawnPosition, un));
+        }
+        else
+        {
+            Spawn(spawnPosition);
+        }
+
+
+
+    }
+
+    private bool CanBeSpawned(Vector3 position)
+    {
+        foreach (var unit in MovementController.instance.units)
+        {
+            if(Vector3.Distance(unit.transform.position,position) < unit.gameObject.GetComponent<Unit>().range* 0.5f)
+            {
+                Debug.Log(Vector3.Distance(unit.transform.position, position) + " " + unit.name);
+                return true;
+
+            }
+        }
+
+        foreach (var station in StationController.instance.stations)
+        {
+            if (Vector3.Distance(station.transform.position, position) < station.gameObject.GetComponent<Unit>().range * 0.5f)
+            {
+                return true;
+
+            }
+        }
+
+        return false;
+    }
+
+    public IEnumerator goTo(Vector3 from, Vector3 to, Unit un)
+    {
+      
+        timer = 0;
+
+        while (timer < jumpDuration)
+        {
+            timer += Time.deltaTime;
+            un.transform.position = Vector3.Lerp(from, to, timer / jumpDuration);
+
+            yield return null;
+        }
+
+        soundManager.instance.stopClip();
+        transform.position = to;
     }
 }

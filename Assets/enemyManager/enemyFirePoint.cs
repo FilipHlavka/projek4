@@ -16,14 +16,20 @@ public class enemyFirePoint : MonoBehaviour
     [SerializeField]
     protected projectileType projectileType;
 
+    [SerializeField]
+    public AudioClip shot;
+    [SerializeField]
+    public AudioSource source;
+
+
     /*
         [SerializeField]
         public fireMode fireMode;*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
-
+        source.clip = shot;
     }
 
     // Update is called once per frame
@@ -82,7 +88,7 @@ public class enemyFirePoint : MonoBehaviour
         int x = Random.Range(-accuracyOffset, accuracyOffset);
         int z = Random.Range(-accuracyOffset, accuracyOffset);
         Vector3 destination = enemy.playerToAttack.transform.position + new Vector3(x, 0, z);
-
+        source.Play();
         return destination;
     }
 

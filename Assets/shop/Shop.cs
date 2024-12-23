@@ -22,6 +22,9 @@ public class Shop : MonoBehaviour
     int upgradePrice;
     Button upgradeButton;
     [SerializeField]
+    GameObject firework;
+    public int fireworkCount = 50;
+    [SerializeField]
     List<Button> buttons = new List<Button>();
     private void Awake()
     {
@@ -81,7 +84,13 @@ public class Shop : MonoBehaviour
         text.text = $"Station upgrade";
         TMP_Text text2 = upgradeButton.transform.GetChild(2).GetComponent<TMP_Text>();
         text2.text = $"Price: {upgradePrice}$";
-        upgradeButton.onClick.AddListener(() => Upgrade(upgradePrice));
+        upgradeButton.onClick.AddListener(() => { 
+            
+            Upgrade(upgradePrice);
+
+            SpawnFireworks();
+        
+        });
     }
     public void Buy(Unit unit, int price)
     {
@@ -92,6 +101,21 @@ public class Shop : MonoBehaviour
             spawController.instance.SpawnButton();
         }
 
+    }
+
+    public void SpawnFireworks()
+    {
+        for(int i = 0; i <= fireworkCount; i++)
+        {
+            Vector3 position = GeneratePositionForFirework();
+
+            Instantiate(firework,position,Quaternion.Euler(-90,Random.Range(0,360),0));
+        }
+    }
+    public Vector3 GeneratePositionForFirework()
+    {
+        Vector3 position = new Vector3(Random.Range(StationController.instance.station.transform.position.x - 15, StationController.instance.station.transform.position.x + 15), 0,Random.Range(StationController.instance.station.transform.position.z - 15, StationController.instance.station.transform.position.z + 15));
+        return position;
     }
 
     public void Upgrade(int price)

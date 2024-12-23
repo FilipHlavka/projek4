@@ -19,6 +19,8 @@ public class Unit : MonoBehaviour
     public bool isStation = false;
     [SerializeField]
     public string Name;
+    [SerializeField]
+    public AudioClip spawn;
 
     public void Start()
     {

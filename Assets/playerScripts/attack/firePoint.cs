@@ -19,15 +19,20 @@ public class firePoint : MonoBehaviour
     protected float timer;
     [SerializeField]
     protected projectileType projectileType;
+
+    [SerializeField]
+    public AudioClip shot;
+    [SerializeField]
+    public AudioSource source;
    
 /*
     [SerializeField]
     public fireMode fireMode;*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
-       
+       source.clip = shot;
     }
 
     // Update is called once per frame
@@ -94,6 +99,7 @@ public class firePoint : MonoBehaviour
         int x = UnityEngine.Random.Range(-accuracyOffset, accuracyOffset);
         int z = UnityEngine.Random.Range(-accuracyOffset, accuracyOffset);
         Vector3 destination = plAtck.enemy.transform.position + new Vector3(x,0,z);
+        source.Play();
 
         return destination;
     }
