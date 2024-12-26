@@ -59,15 +59,16 @@ public class playerAttack : MonoBehaviour
         
     }*/
     public virtual void CheckForRotation() {
-        bool pom = true;
+        // bool pom = true;
+        int pom = 0;
         foreach (var fPoint in firePoints)
         {
             if(fPoint.readyForFire == true)
-                pom = false;
+                pom++;
 
            
         }
-        if (pom)
+        if (pom < firePoints.Count/2)
         {
             Debug.Log("no hejbu se");
 

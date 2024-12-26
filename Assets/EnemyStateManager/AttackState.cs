@@ -168,6 +168,15 @@ public class AttackState : State
                 break;
             }
         }
+        foreach (var m in StationController.instance.stations)
+        {
+
+            if (Vector3.Distance(m.transform.position, enemy.transform.position) < 35)
+            {
+                idle = false;
+                break;
+            }
+        }
 
     }
 

@@ -3581,7 +3581,7 @@ MonoBehaviour:
   stations: []
   panel: {fileID: 448031794}
   stationLevel: 0
-  maxLevel: 3
+  maxLevel: 2
 --- !u!1 &1424653487
 GameObject:
   m_ObjectHideFlags: 0
