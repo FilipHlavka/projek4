@@ -17,14 +17,18 @@ public class EnemyStateManager : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
-        ChangeState(new IdleState());
+        if (enemy.isStation == false)
+            ChangeState(new IdleState());
+        else
+            ChangeState(new StationIdleState());
     }
     
-    private void ChangeState(State newState)
+    public void ChangeState(State newState)
     {
         currentState = newState;
+       
         currentState.InitState(agent, enemy);
+        
         Debug.Log("Changed State -> " + newState.GetType());
     }
 

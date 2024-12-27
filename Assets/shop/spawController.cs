@@ -212,7 +212,7 @@ public class spawController : MonoBehaviour
         {
             if(Vector3.Distance(unit.transform.position,position) < unit.gameObject.GetComponent<Unit>().range* 0.5f)
             {
-                Debug.Log(Vector3.Distance(unit.transform.position, position) + " " + unit.name);
+               // Debug.Log(Vector3.Distance(unit.transform.position, position) + " " + unit.name);
                 return true;
 
             }

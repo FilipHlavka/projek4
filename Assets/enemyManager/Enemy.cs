@@ -22,12 +22,13 @@ public class Enemy : MonoBehaviour
     public int HP;
     [SerializeField]
     public int SH;
+    public bool isStation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         stManager = GetComponent<EnemyStateManager>();
         EnemyPreviewManagement.Instance.AddEnemy(this);
-        InvokeRepeating("ClearLis",3,3);
+        InvokeRepeating("ClearList",3,3);
     }
     public void ShowPointer(bool show)
     {
@@ -48,6 +49,13 @@ public class Enemy : MonoBehaviour
         {
             ShowPointer(false);
         }
+    }
+
+    public void CallForHelp(Vector3 toWhere)
+    {
+        //stManager.ChangeState()
+
+        // udìlat help state
     }
 
     private void ClearList()

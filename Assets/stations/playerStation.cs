@@ -12,5 +12,7 @@ public class playerStation : Unit
     public new void OnDestroy()
     {
         StationController.instance.stations.Clear();
+        if(StationController.instance.panel != null)
+        StationController.instance.panel.SetActive(false);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class AttackState : State
 {
-    private float scanCooldown = 3f;
+    private float scanCooldown = 1.5f;
     private float timer = 0;
     bool idle = false;
     float smallestDistance = float.MaxValue;

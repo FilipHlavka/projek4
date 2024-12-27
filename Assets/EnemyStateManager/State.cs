@@ -8,7 +8,10 @@ public abstract class State
 
     public virtual void InitState(NavMeshAgent agent,Enemy enemy)
     {
+        if (agent != null)
         this.agent = agent;
+
+
         this.enemy = enemy;
     }
 
