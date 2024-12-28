@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     public int SH;
     public bool isStation;
+    [SerializeField]
+    public GameObject destroyExplosion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +42,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         CheckForRemovOfPointer();
+    }
+
+    public virtual void OnDestroy()
+    {
+        if (destroyExplosion != null && Application.isPlaying)
+            Instantiate(destroyExplosion,transform.position,transform.rotation);
     }
 
     public void CheckForRemovOfPointer()

@@ -222,6 +222,7 @@ MonoBehaviour:
   HP: 200
   SH: 200
   isStation: 1
+  destroyExplosion: {fileID: 2911990328994127740, guid: c3e7b84599d71f947a00328d5d88046d, type: 3}
 --- !u!1 &1298494002634372104
 GameObject:
   m_ObjectHideFlags: 0

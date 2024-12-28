@@ -14,5 +14,9 @@ public class playerStation : Unit
         StationController.instance.stations.Clear();
         if(StationController.instance.panel != null)
         StationController.instance.panel.SetActive(false);
+
+        if (explosion != null && Application.isPlaying)
+            Instantiate(explosion, transform.position, transform.rotation);
+
     }
 }

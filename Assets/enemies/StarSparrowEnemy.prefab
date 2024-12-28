@@ -444,6 +444,7 @@ MonoBehaviour:
   HP: 10
   SH: 10
   isStation: 0
+  destroyExplosion: {fileID: 2911990328994127740, guid: 8005688463add1b4389fe362d3a4c8fc, type: 3}
 --- !u!114 &4270909483051157189
 MonoBehaviour:
   m_ObjectHideFlags: 0

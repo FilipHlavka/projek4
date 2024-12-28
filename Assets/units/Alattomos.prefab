@@ -2004,6 +2004,7 @@ MonoBehaviour:
   isStation: 0
   Name: alattomos
   spawn: {fileID: 8300000, guid: bfe7e925be697644086ce88656f3a701, type: 3}
+  explosion: {fileID: 2911990328994127740, guid: 8005688463add1b4389fe362d3a4c8fc, type: 3}
 --- !u!114 &-4365590187308041237
 MonoBehaviour:
   m_ObjectHideFlags: 0

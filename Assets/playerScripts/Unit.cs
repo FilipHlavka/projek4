@@ -21,6 +21,8 @@ public class Unit : MonoBehaviour
     public string Name;
     [SerializeField]
     public AudioClip spawn;
+    [SerializeField]
+    public GameObject explosion;
 
     public void Start()
     {
@@ -39,5 +41,7 @@ public class Unit : MonoBehaviour
         if(playerAttackController.instance.selectedUnits.Contains(mv))
             playerAttackController.instance.selectedUnits.Remove(mv);
 
+        if (explosion != null && Application.isPlaying)
+            Instantiate(explosion,transform.position,transform.rotation);
     }
 }

@@ -2227,6 +2227,7 @@ MonoBehaviour:
   isStation: 0
   Name: ny
   spawn: {fileID: 8300000, guid: bfe7e925be697644086ce88656f3a701, type: 3}
+  explosion: {fileID: 2911990328994127740, guid: 8005688463add1b4389fe362d3a4c8fc, type: 3}
 --- !u!82 &5966413638601075921
 AudioSource:
   m_ObjectHideFlags: 0

@@ -145,9 +145,15 @@ public class MineStation : MonoBehaviour
             enemySlider.value = enemySlider.maxValue;
 
         if (belongsToPlayer)
+        {
             MoneyGenerator.instance.bonusCooldown *= 0.3f;
-        else if(hasBeenCapturedByPlayerBefore)
+            enemySlider.value = 0;
+        }
+        else if (hasBeenCapturedByPlayerBefore)
+        {
             MoneyGenerator.instance.bonusCooldown /= 0.3f;
+            playerSlider.value = 0;
+        }
 
     }
 
@@ -179,6 +185,7 @@ public class MineStation : MonoBehaviour
             }
 
         }
+       
 
         StartCoroutine(CheckCoroutine());
     }

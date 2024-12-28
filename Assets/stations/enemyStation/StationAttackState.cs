@@ -23,7 +23,7 @@ public class StationAttackState : State
         {
             timer = 0f;
             ScanForUnits();
-            if(enemy.playerToAttack != null)
+            if(enemy.playerToAttack != null && enemy != null)
             enemy.CallForHelp(enemy.transform.position);
         }
     }

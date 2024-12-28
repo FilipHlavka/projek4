@@ -110,6 +110,7 @@ MonoBehaviour:
   isStation: 1
   Name: 
   spawn: {fileID: 0}
+  explosion: {fileID: 2911990328994127740, guid: c3e7b84599d71f947a00328d5d88046d, type: 3}
 --- !u!114 &6776483269603184604
 MonoBehaviour:
   m_ObjectHideFlags: 0
