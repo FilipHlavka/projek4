@@ -89,7 +89,7 @@ public class playerAttack : MonoBehaviour
     {
         Vector3 direction = enemy.transform.position - transform.position;    
         Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 4f);
 
         
     }

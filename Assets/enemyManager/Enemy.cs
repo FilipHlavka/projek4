@@ -53,8 +53,30 @@ public class Enemy : MonoBehaviour
 
     public void CallForHelp(Vector3 toWhere)
     {
-        //stManager.ChangeState()
+       
+        foreach(var en in EnemyPreviewManagement.Instance.enemies)
+        {
+            if(en.stManager.CurrentState is not AttackState && !en.isStation && en.stManager.CurrentState is not HelpState)
+            {
+                en.stManager.ChangeState(new HelpState());
+                
+                en.stManager.CurrentState.GoTo(toWhere);
+            }
+        }
+        // udìlat help state
+    }
 
+    public void noHelpNeeded()
+    {
+
+        foreach (var en in EnemyPreviewManagement.Instance.enemies)
+        {
+            if (en.stManager.CurrentState is HelpState)
+            {
+                en.stManager.ChangeState(new IdleState());
+               
+            }
+        }
         // udìlat help state
     }
 

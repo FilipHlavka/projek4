@@ -23,7 +23,8 @@ public class StationAttackState : State
         {
             timer = 0f;
             ScanForUnits();
-            enemy.CallForHelp(enemy.playerToAttack.transform.position);
+            if(enemy.playerToAttack != null)
+            enemy.CallForHelp(enemy.transform.position);
         }
     }
 
@@ -93,6 +94,7 @@ public class StationAttackState : State
         if (idle)
         {
             enemy.shouldAttackPlayer = false;
+            enemy.noHelpNeeded();
             return new StationIdleState();
 
         }

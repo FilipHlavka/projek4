@@ -10,7 +10,7 @@ public class IdleState : State
 
     Vector3 lastPosition;
     Quaternion lastRotation;
-    private float scanCooldown = 3f;
+    private float scanCooldown = 1.5f;
     private float timer = 0;
     float generateCooldown = 0;
     bool attack = false;

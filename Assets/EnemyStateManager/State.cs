@@ -5,6 +5,7 @@ public abstract class State
 {
     protected NavMeshAgent agent;
     protected Enemy enemy;
+    Vector3 whereToGo;
 
     public virtual void InitState(NavMeshAgent agent,Enemy enemy)
     {
@@ -13,6 +14,11 @@ public abstract class State
 
 
         this.enemy = enemy;
+    }
+
+    public virtual void GoTo(Vector3 where)
+    {
+        whereToGo = where;
     }
 
     public abstract State TryToChangeState();
