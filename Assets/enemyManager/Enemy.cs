@@ -46,8 +46,10 @@ public class Enemy : MonoBehaviour
 
     public virtual void OnDestroy()
     {
-        if (destroyExplosion != null && Application.isPlaying)
+        if (Time.timeScale != 0)
             Instantiate(destroyExplosion,transform.position,transform.rotation);
+
+        EnemyPreviewManagement.Instance.enemies.Remove(this);
     }
 
     public void CheckForRemovOfPointer()

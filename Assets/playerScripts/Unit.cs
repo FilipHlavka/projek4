@@ -41,7 +41,7 @@ public class Unit : MonoBehaviour
         if(playerAttackController.instance.selectedUnits.Contains(mv))
             playerAttackController.instance.selectedUnits.Remove(mv);
 
-        if (explosion != null && Application.isPlaying)
+        if (Time.timeScale != 0)
             Instantiate(explosion,transform.position,transform.rotation);
     }
 }

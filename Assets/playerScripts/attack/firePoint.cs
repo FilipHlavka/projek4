@@ -32,7 +32,6 @@ public class firePoint : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-       source.clip = shot;
     }
 
     // Update is called once per frame
@@ -99,6 +98,7 @@ public class firePoint : MonoBehaviour
         int x = UnityEngine.Random.Range(-accuracyOffset, accuracyOffset);
         int z = UnityEngine.Random.Range(-accuracyOffset, accuracyOffset);
         Vector3 destination = plAtck.enemy.transform.position + new Vector3(x,0,z);
+        source.clip = shot;
         source.Play();
 
         return destination;

@@ -139,20 +139,25 @@ public class MineStation : MonoBehaviour
         if (belongsToPlayer)
         {
             playerSlider.value = playerSlider.maxValue;
+            enemySlider.value = 0;
+
             hasBeenCapturedByPlayerBefore = true;
         }
         else
+        {
             enemySlider.value = enemySlider.maxValue;
+            playerSlider.value = 0;
+
+        }
 
         if (belongsToPlayer)
         {
             MoneyGenerator.instance.bonusCooldown *= 0.3f;
-            enemySlider.value = 0;
         }
         else if (hasBeenCapturedByPlayerBefore)
         {
             MoneyGenerator.instance.bonusCooldown /= 0.3f;
-            playerSlider.value = 0;
+            
         }
 
     }

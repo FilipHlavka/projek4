@@ -8,21 +8,23 @@ using UnityEngine;
 public class Nuke : Explosion
 {
     [SerializeField]
-    AudioClip clip;
+    public AudioClip clip;
     [SerializeField]
     float delay;
+    [SerializeField]
+    float TTL = 9;
 
     private void Start()
     {
         // nutno znièit všechny instance 
 
         Invoke("Prehraj", delay);
-        Destroy(gameObject,9);
+        Destroy(gameObject,TTL);
       
     }
     
 
-    public void Prehraj()
+    public virtual void Prehraj()
     {
        
       soundManager.instance.PlayClip(clip);
