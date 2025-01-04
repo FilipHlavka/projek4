@@ -59,20 +59,24 @@ public class projectile : MonoBehaviour
        
         if (collision.transform.TryGetComponent<Unit>(out Unit unit) && !spawnedByPlayer)
         {
-            if (unit.SH - damage <= 0)
+            if (!unit.isInvincible)
             {
-                damage = damage - unit.SH;
-                unit.SH = 0;
-                unit.HP -= damage;
-                if (unit.HP <= 0)
+                if (unit.SH - damage <= 0)
                 {
-                    Destroy(unit.gameObject);
+                    damage = damage - unit.SH;
+                    unit.SH = 0;
+                    unit.HP -= damage;
+                    if (unit.HP <= 0)
+                    {
+                        Destroy(unit.gameObject);
+                    }
+                }
+                else
+                {
+                    unit.SH -= damage;
                 }
             }
-            else
-            {
-                unit.SH -= damage;
-            }
+            
             Destroy(gameObject);
         }
     }

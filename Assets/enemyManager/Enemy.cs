@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     public GameObject destroyExplosion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
         stManager = GetComponent<EnemyStateManager>();
         EnemyPreviewManagement.Instance.AddEnemy(this);
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         CheckForRemovOfPointer();
     }

@@ -1,14 +1,12 @@
-using NUnit.Framework;
+
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.AI;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
-using System.Drawing;
 using System.Collections;
+
+//using UnityEngine.UIElements;
 
 public class spawController : MonoBehaviour
 {
@@ -44,6 +42,9 @@ public class spawController : MonoBehaviour
     [SerializeField]
     GameObject Cross;
     float timer;
+
+    [SerializeField]
+    Button CancelButton;
     private void Awake()
     {
         instance = this;
@@ -51,10 +52,16 @@ public class spawController : MonoBehaviour
     void Start()
     {
         expandButton.onClick.AddListener(() => { Expand(); });
+        CancelButton.onClick.AddListener(unClick);
         panelTF = panel.GetComponent<RectTransform>();
     }
 
     #region ui
+
+    public void unClick()
+    {
+        waitingToSpawn = false;
+    }
     public void deleteButtons()
     {
         foreach (var button in buttons)  
@@ -213,7 +220,7 @@ public class spawController : MonoBehaviour
             if(Vector3.Distance(unit.transform.position,position) < unit.gameObject.GetComponent<Unit>().range* 0.5f)
             {
                // Debug.Log(Vector3.Distance(unit.transform.position, position) + " " + unit.name);
-                return true;
+                return IsNotNearEnemy(position);
 
             }
         }
@@ -222,12 +229,24 @@ public class spawController : MonoBehaviour
         {
             if (Vector3.Distance(station.transform.position, position) < station.gameObject.GetComponent<Unit>().range * 0.5f)
             {
-                return true;
+                return IsNotNearEnemy(position);
 
             }
         }
 
         return false;
+    }
+
+    public bool IsNotNearEnemy(Vector3 position)
+    {
+        foreach(var enemy in EnemyPreviewManagement.Instance.enemies)
+        {
+            if (Vector3.Distance(enemy.transform.position, position) < enemy.gameObject.GetComponent<Enemy>().range * 0.5f)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public IEnumerator goTo(Vector3 from, Vector3 to, Unit un)

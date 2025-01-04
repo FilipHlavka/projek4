@@ -87,7 +87,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.66, y: 9.1, z: 5.66}
+  m_Size: {x: 3.57, y: 4.83, z: 4.43}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &8013667589429068365
 AudioSource:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 0.3
   enemy: {fileID: -3791060922191045593}
-  accuracyOffset: 3
+  accuracyOffset: 2
   viewAngle: 90
   readyForFire: 0
   projectileType: 1
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 0.3
   enemy: {fileID: -3791060922191045593}
-  accuracyOffset: 3
+  accuracyOffset: 2
   viewAngle: 90
   readyForFire: 0
   projectileType: 1
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 0.3
   enemy: {fileID: -3791060922191045593}
-  accuracyOffset: 3
+  accuracyOffset: 2
   viewAngle: 90
   readyForFire: 0
   projectileType: 1
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 0.3
   enemy: {fileID: -3791060922191045593}
-  accuracyOffset: 3
+  accuracyOffset: 2
   viewAngle: 90
   readyForFire: 0
   projectileType: 1
