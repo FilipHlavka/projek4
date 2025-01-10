@@ -200,7 +200,7 @@ public class spawController : MonoBehaviour
         if (NavMesh.SamplePosition(toSpawnPosition, out NavMeshHit hit, 100, NavMesh.AllAreas))
         {
             Unit un = Instantiate(unitToSpawn, toSpawnPosition, rotation, SpawnGameObject.transform);
-            soundManager.instance.PlayClip(un.spawn);
+            un.PlayClip(un.spawn);
             //Debug.Log(new Vector3(toSpawnPosition.x, 29, toSpawnPosition.z) + "    " + new Vector3(spawnPosition.x, 29, spawnPosition.z));
             StartCoroutine(goTo(toSpawnPosition, spawnPosition, un));
         }
@@ -262,7 +262,7 @@ public class spawController : MonoBehaviour
             yield return null;
         }
 
-        soundManager.instance.stopClip();
+        un.source.Stop();
         transform.position = to;
     }
 }

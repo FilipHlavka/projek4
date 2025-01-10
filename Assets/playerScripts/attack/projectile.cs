@@ -47,7 +47,7 @@ public class projectile : MonoBehaviour
                 en.HP -= damage;
                 if (en.HP <= 0)
                 {
-                    Destroy(en.gameObject);
+                   
                 }
             }
             else
@@ -66,10 +66,7 @@ public class projectile : MonoBehaviour
                     damage = damage - unit.SH;
                     unit.SH = 0;
                     unit.HP -= damage;
-                    if (unit.HP <= 0)
-                    {
-                        Destroy(unit.gameObject);
-                    }
+                    
                 }
                 else
                 {

@@ -15,21 +15,21 @@ MonoBehaviour:
   prefs:
   - unit: {fileID: 3618679333768323106, guid: 2279e3840f89086489658fdab2a4bb4f, type: 3}
     Name: "V\xE9rlemezke"
-    Price: 250
+    Price: 100
     neededLevel: 0
     image: {fileID: 21300000, guid: 22aa87368a6e48f4ca422daf28964758, type: 3}
   - unit: {fileID: 121548912634121010, guid: 971f517510b784d4e956088c250a200f, type: 3}
     Name: "Ny\xEDl"
-    Price: 500
-    neededLevel: 1
+    Price: 250
+    neededLevel: 0
     image: {fileID: 21300000, guid: 8d2db5a3e9fb37e4b8b465f3ef3a382e, type: 3}
   - unit: {fileID: 7691425871780146540, guid: 3b2615355bcdda141b8888fcca75d7a3, type: 3}
     Name: "sm\xF6rg\xE5s"
-    Price: 100
-    neededLevel: 0
+    Price: 760
+    neededLevel: 2
     image: {fileID: 21300000, guid: bb54e3b5c962a91439f14328a243c4b2, type: 3}
   - unit: {fileID: 9052786487103936077, guid: 23515adb51d2a6944ad820a493f4bc67, type: 3}
     Name: Alattomos
-    Price: 1000
-    neededLevel: 2
+    Price: 500
+    neededLevel: 1
     image: {fileID: 21300000, guid: 48f600e9931aef6409a1ee2669289aa8, type: 3}

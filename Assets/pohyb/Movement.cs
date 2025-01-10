@@ -15,7 +15,7 @@ public class Movement: MonoBehaviour
     [SerializeField]
     Slider ring;
     public playerAttack atck;
-  
+    public Enemy enemyToAttack;
     
   
     private void Awake()

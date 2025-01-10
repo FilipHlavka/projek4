@@ -55,7 +55,7 @@ public class firePoint : MonoBehaviour
 
                 if (Physics.Raycast(transform.position, plAtck.enemy.transform.position - transform.position, out RaycastHit hit,1000,layerMask))
                 {
-                    Debug.Log("zde" + hit.transform.name);
+                    //Debug.Log("zde" + hit.transform.name);
 
                     if (hit.transform == plAtck.enemy.transform)
                     {

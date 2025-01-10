@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,19 +19,75 @@ public class Enemy : MonoBehaviour
     public bool shouldAttackPlayer = false;
     [SerializeField]
     public int range;
+
     [SerializeField]
-    public int HP;
+    Image healthImage;
+
+    [Header("HP")]
+    private int hp;
+    public int HP
+    {
+        get { return hp; }
+        set
+        {
+            hp = Mathf.Clamp(value, 0, MaxHP);
+            HPslider.value = hp;
+            if (hp == 0)
+                Destroy(gameObject);
+            if (hp < MaxHP / 2.7)
+                healthImage.color = Color.red;
+
+        }
+    }
     [SerializeField]
-    public int SH;
+    public int MaxHP;
+    [SerializeField]
+    Slider HPslider;
+
+
+
+
+    [Header("Def")]
+    private int sh;
+    [SerializeField]
+    public int MaxSH;
+    public int SH
+    {
+        get { return sh; }
+        set
+        {
+            sh = Mathf.Clamp(value, 0, MaxSH);
+            SHslider.value = sh;
+        }
+    }
+
+    [SerializeField]
+    Slider SHslider;
+
+
     public bool isStation;
     [SerializeField]
     public GameObject destroyExplosion;
+    public bool isInAnimation = true;
+    [SerializeField]
+    public AudioSource source;
+    [SerializeField]
+    public AudioClip clip;
+    float elTimer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
         stManager = GetComponent<EnemyStateManager>();
         EnemyPreviewManagement.Instance.AddEnemy(this);
         InvokeRepeating("ClearList",3,3);
+
+        HP = MaxHP;
+        SH = MaxSH;
+
+        SHslider.maxValue = MaxSH;
+        HPslider.maxValue = MaxHP;
+        SHslider.value = MaxSH;
+        HPslider.value = MaxHP;
     }
     public void ShowPointer(bool show)
     {
@@ -42,6 +99,16 @@ public class Enemy : MonoBehaviour
     public void Update()
     {
         CheckForRemovOfPointer();
+
+        
+        elTimer += Time.deltaTime;
+        if (elTimer >= 1f)
+        {
+            elTimer = 0f;
+            CheckForListClear();
+
+        }  
+        
     }
 
     public virtual void OnDestroy()
@@ -52,6 +119,13 @@ public class Enemy : MonoBehaviour
         EnemyPreviewManagement.Instance.enemies.Remove(this);
     }
 
+    public void PlayClip(AudioClip clip)
+    {
+        source.Stop();
+        source.clip = clip;
+        source.Play();
+
+    }
     public void CheckForRemovOfPointer()
     {
 
@@ -61,12 +135,25 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void CheckForListClear()
+    {
+        int j = 0;
+        for (int i = 0; i < attackingPlayers.Count - j; i++)
+        {
+            if (attackingPlayers[i].enemyToAttack != this)
+            {
+                attackingPlayers.RemoveAt(i);
+                j++;
+            }
+        }
+    }
+
     public void CallForHelp(Vector3 toWhere)
     {
        
         foreach(var en in EnemyPreviewManagement.Instance.enemies)
         {
-            if(en.stManager.CurrentState is not AttackState && !en.isStation && en.stManager.CurrentState is not HelpState)
+            if(en.stManager.CurrentState is not AttackState && !en.isStation /*&& en.stManager.CurrentState is not HelpState*/)
             {
                 en.stManager.ChangeState(new HelpState());
                 

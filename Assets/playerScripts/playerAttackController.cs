@@ -48,6 +48,7 @@ public class playerAttackController : MonoBehaviour
 
                     foreach (var obj in selectedUnits)
                     {
+                        obj.enemyToAttack = enemy;
                         enemy.attackingPlayers.Add(obj);
                         obj.atck.AttackTarget(enemy, obj);
 

@@ -2,16 +2,54 @@ using System.Collections;
 using System.Data;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
-    public int HP;
+    [Header("HP")]
+    private int hp;
+    public int HP
+    {
+        get { return hp; }
+        set
+        {
+            hp = Mathf.Clamp(value, 0, MaxHP);
+            HPslider.value = hp;
+            if (hp == 0)
+                Destroy(gameObject);
+            if (hp < MaxHP/2.7)
+                healthImage.color = Color.red;
+
+        }
+    }
     [SerializeField]
     public int MaxHP;
+    [SerializeField]
+    Slider HPslider;
+
     MeshRenderer meshRenderer;
-    public int SH;
+
+
+    [Header("Def")]
+    private int sh;
     [SerializeField]
     public int MaxShields;
+    public int SH 
+    { 
+        get { return sh; }
+        set 
+        {
+            sh = Mathf.Clamp(value, 0, MaxShields);
+            SHslider.value = sh;
+        } 
+    }
+    
+    [SerializeField]
+    Slider SHslider;
+
+    [Header("Slider")]
+    [SerializeField]
+    Image healthImage;
     [SerializeField]
     public int range;
     [SerializeField]
@@ -28,22 +66,45 @@ public class Unit : MonoBehaviour
     float timer;
     float captureTime;
     [SerializeField]
-    AudioSource source;
+    public AudioSource source;
     [SerializeField]
     MeshRenderer shield;
+    [SerializeField]
+    public Enemy enemyToAttack;
+
+
+
+
+
     public void Start()
     {
-        
+        SHslider.maxValue = MaxShields;
+        HPslider.maxValue = MaxHP;
+        SHslider.value = MaxShields;
+        HPslider.value = MaxHP;
+
+
+
         shield.enabled = false;
-        meshRenderer = gameObject.GetComponent<MeshRenderer>();    
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
         HP = MaxHP;
         SH = MaxShields;
-        agent =  gameObject.GetComponent<NavMeshAgent>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
         agent.speed = Speed;
     }
 
+    public void PlayClip(AudioClip clip)
+    {
+        source.Stop();
+        source.clip = clip;
+        source.Play();
+
+    }
+   
+
     public void ActivateShield(float time, AudioClip clip)
     {
+        SH = MaxShields;
         source.clip = clip;
         source.Play();
         shield.enabled = true;

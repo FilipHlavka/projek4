@@ -3,9 +3,33 @@ using UnityEngine;
 public class playerStation : Unit
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
+    float regenCooldown;
+    float timer;
     public void Start()
     {
         base.Start();
+
+    }
+
+    void ShieldRegen()
+    {
+        SH++;
+       
+    }
+
+    private void Update()
+    {
+        if (timer < regenCooldown) { 
+            timer += Time.deltaTime;
+            
+        }
+        else
+        {
+            ShieldRegen();
+
+            timer = 0;
+        }
 
     }
 

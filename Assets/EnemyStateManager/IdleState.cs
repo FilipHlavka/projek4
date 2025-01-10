@@ -18,8 +18,8 @@ public class IdleState : State
     public override void InitState(NavMeshAgent agent, Enemy enemy)
     {
         base.InitState(agent,enemy);
-       
-        SendEnemyToNextPoint();
+        if (!enemy.isInAnimation)
+            SendEnemyToNextPoint();
     }
 
     private Vector3 GenerateRandomPoint()
@@ -41,11 +41,14 @@ public class IdleState : State
 
         checkPosition.x = agent.transform.position.x;
         checkPosition.z = agent.transform.position.z;
-
-        if (Vector3.Distance(targetPoint, checkPosition) < 1 || IsNotMoving())
+        if (!enemy.isInAnimation)
         {
-            SendEnemyToNextPoint();
+            if (Vector3.Distance(targetPoint, checkPosition) < 1 || IsNotMoving())
+            {
+                SendEnemyToNextPoint();
+            }
         }
+       
 
         lastRotation = agent.transform.rotation;
         lastPosition = agent.transform.position;
