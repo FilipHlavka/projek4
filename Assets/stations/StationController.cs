@@ -10,10 +10,14 @@ public class StationController : MonoBehaviour
     public static StationController instance;
 
     public StationMovement station;
+    public ShopSupportStationPart SupportStation;
     public List<StationMovement> stations = new List<StationMovement>();
     public GameObject panel;
     public int stationLevel = 0;
     public int maxLevel = 3;
+
+
+    public GameObject SupportPanel;
 
     private void Awake()
     {
@@ -30,6 +34,34 @@ public class StationController : MonoBehaviour
             playerAttackController.instance.station = station;  
             panel.SetActive(true);
         }
+    }
+
+    public void AddSupportStation(Transform tf)
+    {
+        tf.TryGetComponent<ShopSupportStationPart>(out ShopSupportStationPart st);
+        if (st.isInPowerMode)
+            return;
+        SupportStation = st;
+        if (SupportStation != null)
+        {
+            SupportStation.isSelected(true);
+            
+            SupportPanel.SetActive(true);
+        }
+    }
+
+
+    public void RemoveSupportStation()
+    {
+        if (SupportStation != null)
+        {
+            SupportStation.isSelected(false);
+            SupportStation = null;
+           
+            SupportPanel.SetActive(false);
+        }
+
+
     }
 
     public void RemoveStation()

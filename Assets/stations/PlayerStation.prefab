@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7294635513452054667}
   - component: {fileID: 9152954534883277911}
   - component: {fileID: 2509659987488216138}
+  - component: {fileID: 2950924495132480988}
+  - component: {fileID: 3609285940058977359}
   - component: {fileID: 9047646479269262953}
   - component: {fileID: 6776483269603184604}
   - component: {fileID: 414005975996908935}
@@ -92,6 +94,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.66, y: 5.16, z: 5.66}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2950924495132480988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173350102214768304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1c77349ae518145b8e032127675dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  station: {fileID: 3609285940058977359}
+--- !u!114 &3609285940058977359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173350102214768304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6f321d148dd6c4490c495c57a02884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 50
+  enemyToAttack: {fileID: 0}
+  shouldAttackEnemy: 0
 --- !u!114 &9047646479269262953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +386,7 @@ GameObject:
   - component: {fileID: 8298182459333977454}
   - component: {fileID: 3225533190606896120}
   - component: {fileID: 5291934715481035938}
+  - component: {fileID: 5382480983820151903}
   m_Layer: 9
   m_Name: firePoint
   m_TagString: Untagged
@@ -385,7 +416,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2230260315625396786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1a7cbd5eee09914f93b2699ef20913b, type: 3}
   m_Name: 
@@ -495,6 +526,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5382480983820151903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230260315625396786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3accb5b41a336a4c8fb7d5e700623fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 0.3
+  station: {fileID: 3609285940058977359}
+  accuracyOffset: 3
+  viewAngle: 90
+  readyForFire: 0
+  projectileType: 0
+  shot: {fileID: 8300000, guid: 7ce823372b7444340b7047a0c8867539, type: 3}
+  source: {fileID: 5291934715481035938}
 --- !u!1 &2313441664196139870
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +1022,7 @@ GameObject:
   - component: {fileID: 3476442067316224582}
   - component: {fileID: 7989848047477099067}
   - component: {fileID: 1235332191795441018}
+  - component: {fileID: 5687686487132533601}
   m_Layer: 9
   m_Name: firePoint (3)
   m_TagString: Untagged
@@ -1000,7 +1052,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647934227037850371}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1a7cbd5eee09914f93b2699ef20913b, type: 3}
   m_Name: 
@@ -1110,6 +1162,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5687686487132533601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647934227037850371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3accb5b41a336a4c8fb7d5e700623fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 0.3
+  station: {fileID: 3609285940058977359}
+  accuracyOffset: 3
+  viewAngle: 90
+  readyForFire: 0
+  projectileType: 0
+  shot: {fileID: 8300000, guid: 7ce823372b7444340b7047a0c8867539, type: 3}
+  source: {fileID: 1235332191795441018}
 --- !u!1 &4661989099575287968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1193,7 @@ GameObject:
   - component: {fileID: 2609658074239805903}
   - component: {fileID: 8187414940124503217}
   - component: {fileID: 4182224037310587960}
+  - component: {fileID: 9031278185592089772}
   m_Layer: 9
   m_Name: firePoint (2)
   m_TagString: Untagged
@@ -1150,7 +1223,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4661989099575287968}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1a7cbd5eee09914f93b2699ef20913b, type: 3}
   m_Name: 
@@ -1260,6 +1333,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9031278185592089772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4661989099575287968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3accb5b41a336a4c8fb7d5e700623fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 0.3
+  station: {fileID: 3609285940058977359}
+  accuracyOffset: 3
+  viewAngle: 90
+  readyForFire: 0
+  projectileType: 0
+  shot: {fileID: 8300000, guid: 7ce823372b7444340b7047a0c8867539, type: 3}
+  source: {fileID: 4182224037310587960}
 --- !u!1 &5257318182680575330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,6 +1630,7 @@ GameObject:
   - component: {fileID: 1566433137565989655}
   - component: {fileID: 390803911432714103}
   - component: {fileID: 8936983738820597339}
+  - component: {fileID: 7053903600720861351}
   m_Layer: 9
   m_Name: firePoint (1)
   m_TagString: Untagged
@@ -1566,7 +1660,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6795440771045740050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1a7cbd5eee09914f93b2699ef20913b, type: 3}
   m_Name: 
@@ -1676,6 +1770,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7053903600720861351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795440771045740050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3accb5b41a336a4c8fb7d5e700623fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 0.3
+  station: {fileID: 3609285940058977359}
+  accuracyOffset: 3
+  viewAngle: 90
+  readyForFire: 0
+  projectileType: 0
+  shot: {fileID: 8300000, guid: 7ce823372b7444340b7047a0c8867539, type: 3}
+  source: {fileID: 8936983738820597339}
 --- !u!1 &7034369994885659632
 GameObject:
   m_ObjectHideFlags: 0

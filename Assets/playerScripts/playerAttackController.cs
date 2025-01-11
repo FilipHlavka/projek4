@@ -25,7 +25,7 @@ public class playerAttackController : MonoBehaviour
     void Update()
     {
         UnitAttack();
-        stationAttack();
+        //stationAttack();
     }
 
     private void UnitAttack()
@@ -63,7 +63,7 @@ public class playerAttackController : MonoBehaviour
 
         }
     }
-
+    /*
     private void stationAttack()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && Pauza.pauza.canChange)
@@ -81,6 +81,8 @@ public class playerAttackController : MonoBehaviour
                 {
                     Debug.Log(hit.transform.gameObject.tag);
                     Enemy enemy = hit.transform.gameObject.GetComponent<Enemy>();
+                    if (enemy.isStation)
+                        return;
                     enemy.ShowPointer(true);
 
                     // pointController.ptController.Move(hit.point);
@@ -101,5 +103,5 @@ public class playerAttackController : MonoBehaviour
 
 
         }
-    }
+    }*/
 }

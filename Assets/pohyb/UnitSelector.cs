@@ -61,6 +61,24 @@ public class UnitSelector : MonoBehaviour
                 StationController.instance.RemoveStation();
             }
 
+            LayerMask supportStationMask = LayerMask.GetMask("Water");
+
+
+            if (Physics.Raycast(ray, out RaycastHit hit3, Mathf.Infinity, supportStationMask))
+            {
+                Debug.Log("funguj");
+                StationController.instance.AddSupportStation(hit3.transform);
+            }
+            else if (isClickingOnShop())
+            {
+
+
+            }
+            else
+            {
+                
+                StationController.instance.RemoveSupportStation();
+            }
 
         }
     }

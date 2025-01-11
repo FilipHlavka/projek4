@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Unit : MonoBehaviour
 {
     [Header("HP")]
-    private int hp;
-    public int HP
+    private float hp;
+    public float HP
     {
         get { return hp; }
         set
@@ -19,11 +19,13 @@ public class Unit : MonoBehaviour
                 Destroy(gameObject);
             if (hp < MaxHP/2.7)
                 healthImage.color = Color.red;
+            else 
+                healthImage.color = Color.green;
 
         }
     }
     [SerializeField]
-    public int MaxHP;
+    public float MaxHP;
     [SerializeField]
     Slider HPslider;
 
@@ -63,7 +65,7 @@ public class Unit : MonoBehaviour
     [SerializeField]
     public GameObject explosion;
     public bool isInvincible = false;
-    float timer;
+    float timer2;
     float captureTime;
     [SerializeField]
     public AudioSource source;
@@ -132,10 +134,10 @@ public class Unit : MonoBehaviour
     {
       
 
-        timer = 0;
-        while (timer <= captureTime)
+        timer2 = 0;
+        while (timer2 <= captureTime)
         {
-            timer += Time.deltaTime;
+            timer2 += Time.deltaTime;
 
             yield return null;
         }
