@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MovementController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     public Terrain tr;
     public List<Vector3> newPositions = new List<Vector3>();
+    [SerializeField]
+    GameObject Cross;
     private void Awake()
     {
         instance = this;
@@ -65,25 +68,34 @@ public class MovementController : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity,layerMask))
             {
-                if (hit.transform.gameObject.tag != "unit" && hit.transform.gameObject.tag != "enemy" && selectedUnits.Count != 0)
+                if (NavMesh.SamplePosition(hit.point, out NavMeshHit hit2, 1, NavMesh.AllAreas))
                 {
-                    //Debug.Log(hit.transform.gameObject.tag);
-                    int i = 0;
-                    
-                    pointController.ptController.Move(hit.point);
-                    newPositions = PoziceManager.Instance.aktPosition.makeMath(hit.point, selectedUnits);
-                    foreach (var obj in selectedUnits)
+                    if (hit.transform.gameObject.tag != "unit" && hit.transform.gameObject.tag != "enemy" && selectedUnits.Count != 0)
                     {
-                       
-                        obj.HejbniSe(newPositions[i]);
-                        obj.atck.stopAttacking();
-                        i++;
+                        //Debug.Log(hit.transform.gameObject.tag);
+                        int i = 0;
 
+                        pointController.ptController.Move(hit.point);
+                        newPositions = PoziceManager.Instance.aktPosition.makeMath(hit.point, selectedUnits);
+                        foreach (var obj in selectedUnits)
+                        {
+
+                            obj.HejbniSe(newPositions[i]);
+                            obj.atck.stopAttacking();
+                            i++;
+
+                        }
+                        newPositions.Clear();
                     }
-                   newPositions.Clear();
+
                 }
-                
+                else if(hit.transform.gameObject.tag != "unit" && hit.transform.gameObject.tag != "enemy" && selectedUnits.Count != 0)
+                {
+                    Instantiate(Cross, hit.point, Quaternion.Euler(0, 0, 0));
+                    return;
+                }
             }
+                
 
 
 

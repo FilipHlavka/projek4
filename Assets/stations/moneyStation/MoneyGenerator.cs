@@ -32,7 +32,7 @@ public class MoneyGenerator : MonoBehaviour
     void Start()
     {
         StartCoroutine(AddCurrency());
-        Text.text = "Cash: " + currency;
+        Text.text = "Cash: " + currency + " $";
         
 
     }
@@ -65,7 +65,7 @@ public class MoneyGenerator : MonoBehaviour
     public void ChangeText(int after)
     {
   
-        Text.text = "Cash: " + after;
+        Text.text = "Cash: " + after +" $";
         currency = after;
 
     }

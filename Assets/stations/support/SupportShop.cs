@@ -47,11 +47,12 @@ public class SupportShop : MonoBehaviour
         text2.text = $"Price: {upgradePrice}$";
         healButton.onClick.AddListener(() => {
 
-            Buy(upgradePrice);
-            SpawnFireworks();
+            if (Buy(upgradePrice))
+            {
+                SpawnFireworks();
 
-            StationController.instance.SupportStation.HealPower();
-
+                StationController.instance.SupportStation.HealPower();
+            }
         });
 
         atckButton = Instantiate(Button, panel.transform);
@@ -63,10 +64,13 @@ public class SupportShop : MonoBehaviour
         text4.text = $"Price: {upgradePrice}$";
         atckButton.onClick.AddListener(() => {
 
-            Buy(upgradePrice);
-            SpawnFireworks();
+            if (Buy(upgradePrice))
+            {
+                SpawnFireworks();
 
-            StationController.instance.SupportStation.AtckPower();
+                StationController.instance.SupportStation.AtckPower();
+            }
+            
 
         });
     }
@@ -87,13 +91,14 @@ public class SupportShop : MonoBehaviour
         return position;
     }
 
-    public void Buy(int price)
+    public bool Buy(int price)
     {
         if (MoneyGenerator.instance.currency - price >= 0)
         {
             MoneyGenerator.instance.currency -= price;
-           
+           return true;
         }
+        return false;
     }
    
 }

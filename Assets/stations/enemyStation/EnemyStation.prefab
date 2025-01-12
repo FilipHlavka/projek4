@@ -1901,7 +1901,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 2.9670002, y: 2.19, z: 2.9670002}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 2.19, z: 0}
   m_TimeToStationary: 0.5
@@ -2006,7 +2006,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1.519, y: 2.19, z: 1.519}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 2.19, z: 0}
   m_TimeToStationary: 0.5
@@ -2231,7 +2231,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1.519, y: 2.19, z: 1.519}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 2.19, z: 0}
   m_TimeToStationary: 0.5
@@ -2326,7 +2326,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 2.9670002, y: 2.19, z: 2.9670002}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 2.19, z: 0}
   m_TimeToStationary: 0.5

@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.AI;
 using System.Collections;
 
+
 //using UnityEngine.UIElements;
 
 public class spawController : MonoBehaviour
@@ -159,19 +160,31 @@ public class spawController : MonoBehaviour
 
                 if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
                 {
-                    if (hit.transform.gameObject.tag != "unit" && hit.transform.gameObject.tag != "enemy")
+                    if (NavMesh.SamplePosition(hit.point, out NavMeshHit hit2, 1, NavMesh.AllAreas))
                     {
-                        //Debug.Log(hit.transform.gameObject.tag);
-                        if (!CanBeSpawned(hit.point))
+                        if (hit.transform.gameObject.tag != "unit" && hit.transform.gameObject.tag != "enemy")
                         {
-                            Instantiate(Cross, hit.point, Quaternion.Euler(0,0,0));
-                            return;
-                        }
-                        Spawn(hit.point);
-                        waitingToSpawn = false;
-                        DeleteFromList(unitToSpawn);
+                            //Debug.Log(hit.transform.gameObject.tag);
+                            if (!CanBeSpawned(hit.point))
+                            {
+                                Instantiate(Cross, hit.point, Quaternion.Euler(0, 0, 0));
+                                return;
+                            }
 
+                            Spawn(hit.point);
+                            waitingToSpawn = false;
+                            DeleteFromList(unitToSpawn);
+
+
+
+                        }
                     }
+                    else if (hit.transform.gameObject.tag != "unit" && hit.transform.gameObject.tag != "enemy")
+                    {
+                        Instantiate(Cross, hit.point, Quaternion.Euler(0, 0, 0));
+                        return;
+                    }
+
 
                 }
 
@@ -197,7 +210,7 @@ public class spawController : MonoBehaviour
         Debug.Log(toSpawnPosition);
         Debug.Log(spawnPosition);
     
-        if (NavMesh.SamplePosition(toSpawnPosition, out NavMeshHit hit, 100, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(toSpawnPosition, out NavMeshHit hit, 10, NavMesh.AllAreas))
         {
             Unit un = Instantiate(unitToSpawn, toSpawnPosition, rotation, SpawnGameObject.transform);
             un.PlayClip(un.spawn);
@@ -215,6 +228,7 @@ public class spawController : MonoBehaviour
 
     private bool CanBeSpawned(Vector3 position)
     {
+        
         foreach (var unit in MovementController.instance.units)
         {
             if(Vector3.Distance(unit.transform.position,position) < unit.gameObject.GetComponent<Unit>().range* 0.5f)
