@@ -44,7 +44,7 @@ public class Movement: MonoBehaviour
         stuj = !stuj;
         agent.isStopped = false;
     }
-    public virtual void HejbniSe(Vector3 destination)
+    public virtual void MoveIt(Vector3 destination)
     {
        
          agent.SetDestination(destination);

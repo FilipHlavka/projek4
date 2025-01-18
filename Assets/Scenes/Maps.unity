@@ -1874,7 +1874,7 @@ MonoBehaviour:
     - m_Text: Medium
       m_Image: {fileID: 0}
       m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
-    - m_Text: Hard :3c
+    - m_Text: 'Hard '
       m_Image: {fileID: 0}
       m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_OnValueChanged:

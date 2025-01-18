@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class projectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     
     [SerializeField]
@@ -45,10 +45,7 @@ public class projectile : MonoBehaviour
                 damage = damage - en.SH;
                 en.SH = 0;
                 en.HP -= damage;
-                if (en.HP <= 0)
-                {
-                   
-                }
+                
             }
             else
             {

@@ -29,7 +29,7 @@ public class EnemyStateManager : MonoBehaviour
        
         currentState.InitState(agent, enemy);
         
-        Debug.Log("Changed State -> " + newState.GetType());
+        //Debug.Log(newState.GetType());
     }
 
     private void Update()

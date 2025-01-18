@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Rocket : projectile
+public class Rocket : Projectile
 {
     [SerializeField]
     GameObject Explosion;

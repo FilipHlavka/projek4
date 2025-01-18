@@ -24,8 +24,6 @@ public class IdleState : State
 
     private Vector3 GenerateRandomPoint()
     {
-        // dát rozmìry terénu
-        
         return new Vector3(Random.Range(0, MovementController.instance.tr.terrainData.size.x), 0, Random.Range(0, MovementController.instance.tr.terrainData.size.z));
     }
 

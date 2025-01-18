@@ -26,7 +26,7 @@ public class PoziceManager
 
     public PoziceManager(int cisloPozice)
     {
-        aktPosition = new boxPosition();
+        //aktPosition = new boxPosition();
         switch (cisloPozice)
         {
             case 0: 

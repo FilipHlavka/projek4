@@ -5,5 +5,5 @@ using UnityEngine;
 [Serializable]
 public class laserDataHolder
 {
-    public projectile projectile;
+    public Projectile projectile;
 }

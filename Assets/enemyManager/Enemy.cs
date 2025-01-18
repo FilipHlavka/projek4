@@ -116,6 +116,9 @@ public class Enemy : MonoBehaviour
         if (Time.timeScale != 0)
             Instantiate(destroyExplosion,transform.position,transform.rotation);
 
+        if(isStation)
+            EndGame.instance.EndThisGood();
+
         EnemyPreviewManagement.Instance.enemies.Remove(this);
     }
 
@@ -147,20 +150,21 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    /*&& en.stManager.CurrentState is not HelpState*/
 
     public void CallForHelp(Vector3 toWhere)
     {
        
         foreach(var en in EnemyPreviewManagement.Instance.enemies)
         {
-            if(en.stManager.CurrentState is not AttackState && !en.isStation /*&& en.stManager.CurrentState is not HelpState*/)
+            if(en.stManager.CurrentState is not AttackState && !en.isStation )
             {
                 en.stManager.ChangeState(new HelpState());
                 
                 en.stManager.CurrentState.GoTo(toWhere);
             }
         }
-        // udìlat help state
+        
     }
 
     public void noHelpNeeded()
@@ -174,7 +178,7 @@ public class Enemy : MonoBehaviour
                
             }
         }
-        // udìlat help state
+       
     }
 
     private void ClearList()

@@ -38,7 +38,7 @@ public class enemySingleFire : enemyFirePoint
         //spawn laseru, dodìlání logiky v laseru
 
 
-        projectile pr = Instantiate(universalDataHolder.instance.projectiles.prefs[(int)projectileType].projectile, transform.position, Quaternion.Euler(0, 0, 0));
+        Projectile pr = Instantiate(universalDataHolder.instance.projectiles.prefs[(int)projectileType].projectile, transform.position, Quaternion.Euler(0, 0, 0));
         pr.destination = GenerateFireDestination();
         pr.transform.LookAt(pr.destination);
         pr.transform.rotation = pr.transform.rotation * Quaternion.Euler(0, -90, 90);

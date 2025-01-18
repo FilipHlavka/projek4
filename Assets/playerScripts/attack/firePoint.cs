@@ -45,13 +45,13 @@ public class firePoint : MonoBehaviour
     {
         if (plAtck.shouldFight)
         {
-            Debug.Log("ano");
+            //Debug.Log("ano");
             if (Vector3.Angle(transform.forward, plAtck.enemy.transform.position - transform.position) <= viewAngle)
             {
-                Debug.Log("zde" + transform.name);
+               // Debug.Log("zde" + transform.name);
                 LayerMask layerMask = ~LayerMask.GetMask("pointer");
                 
-                Debug.DrawRay(transform.position, plAtck.enemy.transform.position - transform.position, Color.red);
+               // Debug.DrawRay(transform.position, plAtck.enemy.transform.position - transform.position, Color.red);
 
                 if (Physics.Raycast(transform.position, plAtck.enemy.transform.position - transform.position, out RaycastHit hit,1000,layerMask))
                 {
@@ -61,7 +61,7 @@ public class firePoint : MonoBehaviour
                     {
                         Debug.DrawRay(transform.position, plAtck.enemy.transform.position - transform.position, Color.red);
                         readyForFire = true;
-                        //Debug.Log("haaaaaaaaaaaloooooo");
+                        
                     }
                     else
                     {
@@ -111,21 +111,21 @@ public class firePoint : MonoBehaviour
             Gizmos.color = Color.yellow;
             Vector3 forward = transform.forward;
 
-            // Draw the cone for the view angle
+            
             Quaternion leftRayRotation = Quaternion.Euler(0, -viewAngle, 0);
             Quaternion rightRayRotation = Quaternion.Euler(0, viewAngle, 0);
 
             Vector3 leftRayDirection = leftRayRotation * forward;
             Vector3 rightRayDirection = rightRayRotation * forward;
 
-            // Draw the base direction
+            
             Gizmos.DrawRay(transform.position, forward * 5);
 
-            // Draw the left and right bounds of the angle
+           
             Gizmos.DrawRay(transform.position, leftRayDirection * 5);
             Gizmos.DrawRay(transform.position, rightRayDirection * 5);
 
-            // Optionally, draw an arc
+            
             DrawArc(forward, viewAngle, 5, 20);
         }
     }

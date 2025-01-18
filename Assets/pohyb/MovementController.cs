@@ -80,7 +80,7 @@ public class MovementController : MonoBehaviour
                         foreach (var obj in selectedUnits)
                         {
 
-                            obj.HejbniSe(newPositions[i]);
+                            obj.MoveIt(newPositions[i]);
                             obj.atck.stopAttacking();
                             i++;
 

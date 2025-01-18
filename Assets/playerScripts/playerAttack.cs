@@ -54,10 +54,7 @@ public class playerAttack : MonoBehaviour
 
         CheckForRotation();
     }
-    /*private void OnDrawGizmos()
-    {
-        
-    }*/
+   
     public virtual void CheckForRotation() {
         // bool pom = true;
         int pom = 0;
@@ -102,7 +99,7 @@ public class playerAttack : MonoBehaviour
         foreach(var pl in enemy.attackingPlayers)
         {
             if(pl != null)
-            pl.HejbniSe(newPositions[i]);
+            pl.MoveIt(newPositions[i]);
             i++;    
         }
         newPositions.Clear();

@@ -72,6 +72,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     MeshRenderer shield;
     [SerializeField]
+    AudioSource shieldSource;
+    [SerializeField]
     public Enemy enemyToAttack;
 
 
@@ -107,8 +109,8 @@ public class Unit : MonoBehaviour
     public void ActivateShield(float time, AudioClip clip)
     {
         SH = MaxShields;
-        source.clip = clip;
-        source.Play();
+        shieldSource.clip = clip;
+        shieldSource.Play();
         shield.enabled = true;
         meshRenderer.enabled = false;
         isInvincible = true;

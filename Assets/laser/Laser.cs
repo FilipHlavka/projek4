@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Laser : projectile
+public class Laser : Projectile
 {
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

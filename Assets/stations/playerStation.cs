@@ -42,5 +42,7 @@ public class playerStation : Unit
         if (Time.timeScale != 0)
             Instantiate(explosion, transform.position, transform.rotation);
 
+        EndGame.instance.EndThisBad();
+
     }
 }
