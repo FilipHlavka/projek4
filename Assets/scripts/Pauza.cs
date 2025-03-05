@@ -8,6 +8,7 @@ public class Pauza : MonoBehaviour
     GameObject panel;
 
     public bool canChange = true;
+    public bool isAbleTo = true;
 
     private void Awake()
     {
@@ -21,15 +22,19 @@ public class Pauza : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!stopped)
+            if (isAbleTo)
             {
-                Stop();
-            }
-            else
-            {
-                UnStop();
+                if (!stopped)
+                {
+                    Stop();
+                }
+                else
+                {
+                    UnStop();
 
+                }
             }
+            
         }
     }
 

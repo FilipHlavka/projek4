@@ -22,7 +22,7 @@ public class EnemySpawn : MonoBehaviour
     float timer;
     [SerializeField]
     float jumpDuration;
-    // Start is called before the first frame update
+    
 
 
     void Awake()
@@ -37,7 +37,7 @@ public class EnemySpawn : MonoBehaviour
         StartCoroutine(SpawnCoroutine());
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         //Debug.Log(Random.Range(0, enemies.Count));
@@ -59,7 +59,9 @@ public class EnemySpawn : MonoBehaviour
         Debug.Log(spawnPosition);
 
         if (NavMesh.SamplePosition(toSpawnPosition, out NavMeshHit hit, 1, NavMesh.AllAreas))
-        { 
+        {
+            
+           
             Enemy enemy = Instantiate(
             enemies.prefs[Random.Range(0, enemies.prefs.Count)].enemy,
             toSpawnPosition,
@@ -76,7 +78,6 @@ public class EnemySpawn : MonoBehaviour
 
 
     }
-
     private void Spawn()
     {
         Debug.Log("spawn");

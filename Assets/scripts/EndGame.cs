@@ -21,6 +21,8 @@ public class EndGame : MonoBehaviour
     {
         if (Time.timeScale != 0f)
         {
+            Pauza.pauza.isAbleTo = false;
+
             panelWin.SetActive(true);
             Invoke("SwitchScenes", 5);
         }
@@ -31,6 +33,7 @@ public class EndGame : MonoBehaviour
     {
         if (Time.timeScale != 0f)
         {
+            Pauza.pauza.isAbleTo = false;
             panelLose.SetActive(true);
             Invoke("SwitchScenes", 5);
         }

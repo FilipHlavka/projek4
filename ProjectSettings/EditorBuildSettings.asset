@@ -17,5 +17,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 96c1470500b3eed41adbb6915c45b52f
+  - enabled: 1
+    path: Assets/Scenes/Uridojaras.unity
+    guid: c3792d4df734e3944a192e079cdc4b10
+  - enabled: 1
+    path: Assets/Scenes/Vilagegyetem.unity
+    guid: 8bf4352d73731a6429d4c59a5379ba4a
+  - enabled: 1
+    path: Assets/Scenes/Csillag.unity
+    guid: 5daf354c294f129439e4a241e33c315f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -6883,7 +6883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e136129fcd7e21b4f8a1cbc9eaa6b7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 2000
+  currency: 5000
   Max: 10000
   byHowMany: 1
   pom: 1
@@ -12330,6 +12330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1237187910}
   canChange: 1
+  isAbleTo: 1
 --- !u!114 &672285876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25227,8 +25228,8 @@ MonoBehaviour:
   SpawnGameObject: {fileID: 526127578}
   SpawnTerrain: {fileID: 1532067918}
   canSpawn: 1
-  SpawnCooldown: 20
-  jumpDuration: 0.2
+  SpawnCooldown: 1
+  jumpDuration: 0.5
 --- !u!1 &1496244075
 GameObject:
   m_ObjectHideFlags: 0
