@@ -1117,7 +1117,7 @@ MonoBehaviour:
   playerToAttack: {fileID: 0}
   attackingStation: {fileID: 0}
   shouldAttackPlayer: 0
-  range: 35
+  range: 40
   healthImage: {fileID: 4557899187398316884}
   MaxHP: 20
   HPslider: {fileID: 4061084821213718711}
