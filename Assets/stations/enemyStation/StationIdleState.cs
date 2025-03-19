@@ -12,7 +12,7 @@ public class StationIdleState : State
 
     public void ScanForUnits()
     {
-        // enemak bude utocit na nejblizsi jednotku, pokud na nej budou utocit unity s celkovim poctem zivotu veci nez 1 a pul zivotu enemy, enemy zacne zdrhat
+       
         foreach (var m in MovementController.instance.units)
         {
             if (Vector3.Distance(m.transform.position, enemy.transform.position) < enemy.range)

@@ -25,7 +25,7 @@ public class supportAttack : MonoBehaviour
     {
         ChangeTarget();
         idle = true;
-        // enemak bude utocit na nejblizsi jednotku, pokud na nej budou utocit unity s celkovim poctem zivotu veci nez 1 a pul zivotu enemy, enemy zavola o pomoc
+       
         foreach (var m in EnemyPreviewManagement.Instance.enemies)
         {
             if (Vector3.Distance(m.transform.position, station.transform.position) < station.range)

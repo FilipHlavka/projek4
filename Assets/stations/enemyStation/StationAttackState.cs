@@ -68,7 +68,7 @@ public class StationAttackState : State
     {
         ChangeTarget();
         idle = true;
-        // enemak bude utocit na nejblizsi jednotku, pokud na nej budou utocit unity s celkovim poctem zivotu veci nez 1 a pul zivotu enemy, enemy zavola o pomoc
+       
         foreach (var m in MovementController.instance.units)
         {
             if (Vector3.Distance(m.transform.position, enemy.transform.position) < enemy.range)
