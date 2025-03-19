@@ -47,6 +47,11 @@ public class MoneyGenerator : MonoBehaviour
                 StartCoroutine(AddCurrency());
             }
 
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            currency = Max - 1;
+        }
+
         
     }
     IEnumerator AddCurrency()
@@ -58,6 +63,7 @@ public class MoneyGenerator : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+        if(currency + byHowMany <= Max)
         ChangeText(currency + byHowMany);
         isRunning = false;
 

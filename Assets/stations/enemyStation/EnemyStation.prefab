@@ -231,6 +231,7 @@ MonoBehaviour:
   isInAnimation: 1
   source: {fileID: 0}
   clip: {fileID: 0}
+  regenCooldown: 0.8
 --- !u!114 &7115220939129821877
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7193,7 +7193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e136129fcd7e21b4f8a1cbc9eaa6b7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 2000
+  currency: 1000
   Max: 10000
   byHowMany: 1
   pom: 1
